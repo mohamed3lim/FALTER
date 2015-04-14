@@ -1,0 +1,37 @@
+\select@language {ngerman}
+\contentsline {part}{I\hspace {1em}Simulink, Modell und Simulation}{1}
+\contentsline {section}{\numberline {1}Simulink}{1}
+\contentsline {section}{\numberline {2}Aufbau des Modells}{1}
+\contentsline {subsection}{\numberline {2.1}6 Degrees of Freedom (=6DoF) - Euler Angles}{1}
+\contentsline {subsection}{\numberline {2.2}Rotation}{2}
+\contentsline {subsection}{\numberline {2.3}Speed}{2}
+\contentsline {subsection}{\numberline {2.4}Direction}{2}
+\contentsline {section}{\numberline {3}Scope}{2}
+\contentsline {section}{\numberline {4}Plots}{2}
+\contentsline {section}{\numberline {5}Schnittstelle VRML-Simulink}{3}
+\contentsline {part}{II\hspace {1em}Virtual Reality}{4}
+\contentsline {section}{\numberline {1}VRML}{4}
+\contentsline {subsection}{\numberline {1.1}Knoten (engl. Nodes)}{4}
+\contentsline {subsection}{\numberline {1.2}Prototypen}{4}
+\contentsline {subsubsection}{wall, ground}{4}
+\contentsline {subsubsection}{box, sphere}{4}
+\contentsline {subsection}{\numberline {1.3}Viewpoints}{5}
+\contentsline {part}{III\hspace {1em}Anleitungen}{6}
+\contentsline {section}{\numberline {1}Die Welten}{6}
+\contentsline {subsection}{\numberline {1.1}Eine Welt zum bearbeiten \IeC {\"o}ffnen}{6}
+\contentsline {subsection}{\numberline {1.2}Auf Knoten in der Welt zugreifen}{6}
+\contentsline {section}{\numberline {2}Die Funktionen}{7}
+\contentsline {subsection}{\numberline {2.1}newWall.m}{7}
+\contentsline {subsection}{\numberline {2.2}newBox.m, newSphere.m}{7}
+\contentsline {subsection}{\numberline {2.3}raum.m, raum.mat, deleteWalls.m getObjects.m}{7}
+\contentsline {subsection}{\numberline {2.4}mygrid.m}{7}
+\contentsline {section}{\numberline {3}Das Simulink Modell}{8}
+\contentsline {subsection}{\numberline {3.1}Fliegen lassen}{8}
+\contentsline {subsection}{\numberline {3.2}Das Modell ver\IeC {\"a}ndern}{8}
+\contentsline {subsection}{\numberline {3.3}Die Anzeigen}{9}
+\contentsline {section}{\numberline {A}kleine Bugs und Fehler}{10}
+\contentsline {subsection}{Der Flug gen Osten}{10}
+\contentsline {subsection}{Der Sensor-Kegel}{10}
+\contentsline {subsection}{Falter als Lichtquelle}{10}
+\contentsline {subsection}{wall und ground}{10}
+\contentsline {subsection}{Physikalische Korrektheit}{10}

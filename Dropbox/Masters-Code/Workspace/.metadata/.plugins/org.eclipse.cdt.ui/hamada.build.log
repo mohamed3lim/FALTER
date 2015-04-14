@@ -1,0 +1,15 @@
+15:48:14 **** Incremental Build of configuration Debug for project hamada ****
+make all 
+Building file: ../src/hamada.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/hamada.d" -MT"src/hamada.d" -o "src/hamada.o" "../src/hamada.cpp"
+Finished building: ../src/hamada.cpp
+ 
+Building target: hamada
+Invoking: Cross G++ Linker
+g++  -o "hamada"  ./src/hamada.o ./src/tester.o   
+Finished building target: hamada
+ 
+
+15:48:15 Build Finished (took 362ms)
+

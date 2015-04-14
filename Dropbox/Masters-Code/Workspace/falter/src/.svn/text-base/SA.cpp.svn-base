@@ -1,0 +1,670 @@
+/*
+ * SA.cpp
+ *
+ *  Created on: Dec 8, 2014
+ *      Author: alim
+ */
+
+#include "SA.h"
+#include <random>
+
+
+
+int angleFilterSA(double angle)
+{
+
+	int x  = angle;
+	switch (x)
+	{
+	case 0:
+	case 1:
+	case -1:
+		return 0;
+		break;
+	case 180:
+	case 179:
+	case 181:
+		return 180;
+		break;
+	case 90:
+	case 91:
+	case 89:
+		return 90;
+		break;
+	case 270:
+	case 271:
+	case 269:
+		return 270;
+		break;
+	case 45:
+	case 44:
+	case 46:
+		return 45;
+		break;
+	case 135:
+	case 134:
+	case 136:
+		return 135;
+		break;
+	case 225:
+	case 224:
+	case 226:
+		return 225;
+		break;
+	case 315:
+	case 314:
+	case 316:
+		return 315;
+		break;
+	default:
+		cout << "Incorrect angle *************" << endl;
+		return -1;
+		break;
+	}
+	return -1;
+}
+
+int nextStepSA(list<Square> *openList,Data d, Square *Current, Square Goal,list<int> *movements,bool *localMinFlag, int method, double stepLength,double *globalMin,double *localMin, double *temperature)
+{
+
+//	(*openList).push_back(*Current);
+	if((*globalMin) == -1){
+		(*globalMin) = (*Current).getDist();
+	}
+//	if(!(*localMinFlag)){
+//		(*openList).clear();
+//	}
+
+
+	int direction[8]; // change with dimentions increase
+	int directionCounter = 0;
+	double xTemp;
+	double yTemp;
+	double zTemp;
+	Square tempSquare = Square(0, 0, 0);
+	list<Square> tempList;
+
+
+	double angle = d.currangle();
+
+	int dirInt = angleFilterSA(angle);
+
+	double front = d.srfdata(0).srf_front_ctr();
+	double back = d.srfdata(0).srf_rear();
+	double left = d.srfdata(0).srf_lhs();
+	double right = d.srfdata(0).srf_rhs();
+	double leftFront = d.srfdata(0).srf_front_lhs();
+	double rightFront = d.srfdata(0).srf_front_rhs();
+	double ground = d.srfdata(0).srf_gnd();
+//	double ceiling = d.srfdata(0).srf_ceiling();
+
+	if ((*movements).size() > 0)
+	{
+		if (((*movements).back() != 1) && ((*movements).back() != 7)
+				&& ((*movements).back() != 8))
+		{
+			(*movements).push_back(1);
+//			cout << "Here" << endl;
+			return 1;
+		}
+	}
+
+
+	if (front > (stepLength * 2))
+	{
+		switch (dirInt)
+		{
+		case 0:
+			xTemp = (*Current).getX() - stepLength;
+			yTemp = (*Current).getY();
+			zTemp = (*Current).getZ();
+			break;
+		case 180:
+			xTemp = (*Current).getX() + stepLength;
+			yTemp = (*Current).getY();
+			zTemp = (*Current).getZ();
+			break;
+		case 90:
+			xTemp = (*Current).getX();
+			yTemp = (*Current).getY() + stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 270:
+			xTemp = (*Current).getX();
+			yTemp = (*Current).getY() - stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 45:
+			xTemp = (*Current).getX() - stepLength;
+			yTemp = (*Current).getY() + stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 135:
+			xTemp = (*Current).getX() + stepLength;
+			yTemp = (*Current).getY() + stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 225:
+			xTemp = (*Current).getX() + stepLength;
+			yTemp = (*Current).getY() - stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 315:
+			xTemp = (*Current).getX() - stepLength;
+			yTemp = (*Current).getY() - stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		default:
+			break;
+		}
+		if (!isLocalMin(xTemp, yTemp, zTemp, *openList)){
+			tempSquare.setX(xTemp);
+			tempSquare.setY(yTemp);
+			tempSquare.setZ(zTemp);
+			tempSquare.setDist(tempSquare.calcDist(Goal,d,method));
+			tempSquare.setVisited(1);
+			tempList.push_back(tempSquare);
+			direction[directionCounter] = 1;
+			directionCounter++;
+		}
+	}
+
+
+	if (right > (stepLength * 2))
+	{
+
+		switch (dirInt)
+		{
+		case 0:
+			xTemp = (*Current).getX();
+			yTemp = (*Current).getY() + stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 180:
+			xTemp = (*Current).getX();
+			yTemp = (*Current).getY() - stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 90:
+			xTemp = (*Current).getX() + stepLength;
+			yTemp = (*Current).getY();
+			zTemp = (*Current).getZ();
+			break;
+		case 270:
+			xTemp = (*Current).getX() - stepLength;
+			yTemp = (*Current).getY();
+			zTemp = (*Current).getZ();
+			break;
+		case 45:
+			xTemp = (*Current).getX() + stepLength;
+			yTemp = (*Current).getY() + stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 135:
+			xTemp = (*Current).getX() + stepLength;
+			yTemp = (*Current).getY() - stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 225:
+			xTemp = (*Current).getX() - stepLength;
+			yTemp = (*Current).getY() - stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 315:
+			xTemp = (*Current).getX() - stepLength;
+			yTemp = (*Current).getY() + stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		default:
+			break;
+		}
+		if (!isLocalMin(xTemp, yTemp, zTemp, *openList)){
+			tempSquare.setX(xTemp);
+			tempSquare.setY(yTemp);
+			tempSquare.setZ(zTemp);
+			tempSquare.setDist(tempSquare.calcDist(Goal,d,method));
+			tempSquare.setVisited(3);
+			tempList.push_back(tempSquare);
+			direction[directionCounter] = 3;
+			directionCounter++;
+		}
+
+	}
+	if (left > (stepLength * 2))
+	{
+
+		switch (dirInt)
+		{
+		case 0:
+			xTemp = (*Current).getX();
+			yTemp = (*Current).getY() - stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 180:
+			xTemp = (*Current).getX();
+			yTemp = (*Current).getY() + stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 90:
+			xTemp = (*Current).getX() - stepLength;
+			yTemp = (*Current).getY();
+			zTemp = (*Current).getZ();
+			break;
+		case 270:
+			xTemp = (*Current).getX() + stepLength;
+			yTemp = (*Current).getY();
+			zTemp = (*Current).getZ();
+			break;
+		case 45:
+			xTemp = (*Current).getX() - stepLength;
+			yTemp = (*Current).getY() - stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 135:
+			xTemp = (*Current).getX() - stepLength;
+			yTemp = (*Current).getY() + stepLength;
+			;
+			zTemp = (*Current).getZ();
+			break;
+		case 225:
+			xTemp = (*Current).getX() + stepLength;
+			yTemp = (*Current).getY() + stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 315:
+			xTemp = (*Current).getX() + stepLength;
+			yTemp = (*Current).getY() - stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		default:
+			// write here code for angles 45 later on
+			break;
+		}
+		if (!isLocalMin(xTemp, yTemp, zTemp, *openList)){
+			tempSquare.setX(xTemp);
+			tempSquare.setY(yTemp);
+			tempSquare.setZ(zTemp);
+			tempSquare.setDist(tempSquare.calcDist(Goal,d,method));
+			tempSquare.setVisited(4);
+			tempList.push_back(tempSquare);
+			direction[directionCounter] = 4;
+			directionCounter++;
+		}
+	}
+
+	if (rightFront > (stepLength * 100))
+	{
+
+		switch (dirInt)
+		{
+		case 0:
+			xTemp = (*Current).getX() - stepLength;
+			yTemp = (*Current).getY() + stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 45:
+			xTemp = (*Current).getX();
+			yTemp = (*Current).getY() + stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 90:
+			xTemp = (*Current).getX() + stepLength;
+			yTemp = (*Current).getY() + stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 135:
+			xTemp = (*Current).getX() + stepLength;
+			yTemp = (*Current).getY();
+			zTemp = (*Current).getZ();
+			break;
+		case 180:
+			xTemp = (*Current).getX() + stepLength;
+			yTemp = (*Current).getY() - stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 225:
+			xTemp = (*Current).getX();
+			yTemp = (*Current).getY() - stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 270:
+			xTemp = (*Current).getX() - stepLength;
+			yTemp = (*Current).getY() - stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 315:
+			xTemp = (*Current).getX() - stepLength;
+			yTemp = (*Current).getY();
+			zTemp = (*Current).getZ();
+			break;
+		default:
+			break;
+		}
+		if (!isLocalMin(xTemp, yTemp, zTemp, *openList)){
+			tempSquare.setX(xTemp);
+			tempSquare.setY(yTemp);
+			tempSquare.setZ(zTemp);
+			tempSquare.setDist(tempSquare.calcDist(Goal,d,method));
+			tempSquare.setVisited(5);
+			tempList.push_back(tempSquare);
+			direction[directionCounter] = 5;
+			directionCounter++;
+		}
+	}
+
+	if (leftFront > (stepLength * 100))
+	{
+
+		switch (dirInt)
+		{
+		case 0:
+			xTemp = (*Current).getX() - stepLength;
+			yTemp = (*Current).getY() - stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 45:
+			xTemp = (*Current).getX() - stepLength;
+			yTemp = (*Current).getY();
+			zTemp = (*Current).getZ();
+			break;
+		case 90:
+			xTemp = (*Current).getX() - stepLength;
+			yTemp = (*Current).getY() + stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 135:
+			xTemp = (*Current).getX();
+			yTemp = (*Current).getY() + stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 180:
+			xTemp = (*Current).getX() + stepLength;
+			yTemp = (*Current).getY() + stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 225:
+			xTemp = (*Current).getX() + stepLength;
+			yTemp = (*Current).getY();
+			zTemp = (*Current).getZ();
+			break;
+		case 270:
+			xTemp = (*Current).getX() + stepLength;
+			yTemp = (*Current).getY() - stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 315:
+			xTemp = (*Current).getX();
+			yTemp = (*Current).getY() - stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		default:
+			break;
+		}
+		if (!isLocalMin(xTemp, yTemp, zTemp, *openList)){
+			tempSquare.setX(xTemp);
+			tempSquare.setY(yTemp);
+			tempSquare.setZ(zTemp);
+			tempSquare.setDist(tempSquare.calcDist(Goal,d,method));
+			tempSquare.setVisited(6);
+			tempList.push_back(tempSquare);
+			direction[directionCounter] = 6;
+			directionCounter++;
+		}
+	}
+
+	if ((2 - ground) > (stepLength * 2))
+	{
+		xTemp = (*Current).getX();
+		yTemp = (*Current).getY();
+		zTemp = (*Current).getZ() + stepLength;
+		if (!isLocalMin(xTemp, yTemp, zTemp, *openList)){
+			tempSquare.setX(xTemp);
+			tempSquare.setY(yTemp);
+			tempSquare.setZ(zTemp);
+			tempSquare.setDist(tempSquare.calcDist(Goal,d,method));
+			tempSquare.setVisited(7);
+			tempList.push_back(tempSquare);
+			direction[directionCounter] = 7;
+			directionCounter++;
+		}
+
+	}
+	if (ground > (stepLength * 2))
+	{
+		xTemp = (*Current).getX();
+		yTemp = (*Current).getY();
+		zTemp = (*Current).getZ() - stepLength;
+		if (!isLocalMin(xTemp, yTemp, zTemp, *openList)){
+			tempSquare.setX(xTemp);
+			tempSquare.setY(yTemp);
+			tempSquare.setZ(zTemp);
+			tempSquare.setDist(tempSquare.calcDist(Goal,d,method));
+			tempSquare.setVisited(8);
+			tempList.push_back(tempSquare);
+			direction[directionCounter] = 8;
+			directionCounter++;
+		}
+
+	}
+	if (back > (stepLength * 2))
+	{
+
+		switch (dirInt)
+		{
+		case 0:
+			xTemp = (*Current).getX() + stepLength;
+			yTemp = (*Current).getY();
+			zTemp = (*Current).getZ();
+			break;
+		case 180:
+			xTemp = (*Current).getX() - stepLength;
+			yTemp = (*Current).getY();
+			zTemp = (*Current).getZ();
+			break;
+		case 90:
+			xTemp = (*Current).getX();
+			yTemp = (*Current).getY() - stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 270:
+			xTemp = (*Current).getX();
+			yTemp = (*Current).getY() + stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 45:
+			xTemp = (*Current).getX() + stepLength;
+			yTemp = (*Current).getY() - stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 135:
+			xTemp = (*Current).getX() - stepLength;
+			yTemp = (*Current).getY() - stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 225:
+			xTemp = (*Current).getX() - stepLength;
+			yTemp = (*Current).getY() + stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		case 315:
+			xTemp = (*Current).getX() + stepLength;
+			yTemp = (*Current).getY() + stepLength;
+			zTemp = (*Current).getZ();
+			break;
+		default:
+			// write here code for angles 45 later on
+			break;
+		}
+		if (!isLocalMin(xTemp, yTemp, zTemp, *openList)){
+			tempSquare.setX(xTemp);
+			tempSquare.setY(yTemp);
+			tempSquare.setZ(zTemp);
+			tempSquare.setDist(tempSquare.calcDist(Goal,d,method));
+			tempSquare.setVisited(2);
+			tempList.push_back(tempSquare);
+			direction[directionCounter] = 2;
+			directionCounter++;
+		}
+	}
+
+
+	if (tempList.size() > 0)
+	{
+		double bestDist = tempList.front().getDist();
+		Square bestSquare = tempList.front();
+		int bestPos = 0;
+		int j = tempList.size();
+		for (int i = 0; i < j; i++)
+		{
+//			cout << "Current Distance " << tempList.front().getDist() << endl;
+			if (tempList.front().getDist() < bestDist)
+			{
+				bestDist = tempList.front().getDist();
+				bestSquare = tempList.front();
+				bestPos = i;
+			}
+//			cout << "temp list size " << tempList.size() << endl;
+			tempList.push_back(tempList.front());
+			tempList.pop_front();
+		}
+		if(bestDist < (*globalMin)){
+			(*temperature) = 500;
+			cout << "Improving Global Min ...." << endl;
+			(*globalMin) = bestDist;
+			*localMinFlag = false;
+			(*movements).push_back(direction[bestPos]);
+			(*openList).clear();
+//			(*Current) = bestSquare;
+			return direction[bestPos];
+		}
+		else
+		{
+			cout << "Escaping Local Minimum ......" << endl;
+			cout << "Temperature :               " << *temperature << endl;
+			*localMinFlag = true;
+//			if(!(*localMinFlag)){
+//				(*openList).push_back((*Current));
+//				*localMinFlag = true;
+//			}
+//			if(!(*localMinFlag)){
+//				(*openList).push_back((*Current));
+////				*localMinFlag = true;
+//				int lastMove = (*movements).back();
+//				(*movements).pop_back();
+//				switch (lastMove)
+//				{
+//				case 1:
+//					*localMinFlag = true;
+//					return 2;
+//					break;
+//				case 7:
+//					return 8;
+//					break;
+//				case 8:
+//					return 7;
+//					break;
+//				default: return -5;break;
+//				}
+//			}
+//			(*openList).push_back(*Current);
+//			if((*openList).size() >= 2){
+//				(*openList).pop_front();
+//			}
+			double currDist;
+			double p;
+			double r;
+			int k = tempList.size();
+
+			int rn;
+			std::random_device rd("/dev/urandom");
+			std::uniform_real_distribution<> dist(0, 1);
+
+//			rn = rand() % 8;
+			rn = (int)(dist(rd) * 8);
+			cout << "RN " << rn << endl;
+//			if(tempList.front().getVisited() == 1){
+//				tempSquare = tempList.front();
+//				tempList.pop_front();
+//			}
+
+			for(int j = 0; j < rn; j++){
+				tempList.push_back(tempList.front());
+				tempList.pop_front();
+			}
+//			if(tempSquare.getVisited() == 1){
+//				tempList.push_front(tempSquare);
+//			}
+			for(int j = 0; j < k; j++){
+				if((tempList.front().getVisited() == 7) || (tempList.front().getVisited() == 8)){
+					tempList.pop_front();
+				}
+				else{
+					tempList.push_back(tempList.front());
+					tempList.pop_front();
+				}
+			}
+
+			for(int i = 0; i < (k*10); i++){
+//			while(true){
+				tempSquare = tempList.front();
+				tempList.push_back(tempList.front());
+				tempList.pop_front();
+				currDist = tempSquare.getDist();
+				p = exp(((*globalMin) - currDist)/(*temperature));
+				cout << "P " << p << endl;
+				r = dist(rd);
+				cout << "R " << r << endl;
+				if(p > r){
+					(*movements).push_back(tempSquare.getVisited());
+					cout << "Accepted" << endl;
+					(*temperature) = (*temperature)*0.8;
+					return tempSquare.getVisited();
+				}
+				cout << "Rejected" << endl;
+
+			}
+			(*globalMin) = bestDist;
+			(*movements).push_back(direction[bestPos]);
+			return direction[bestPos];
+		}
+	}
+	else{
+		return -1;
+	}
+	return -10;
+}
+
+bool isLocalMin(double x, double y, double z, list<Square> openList)
+{
+
+	Square temp = Square(0, 0, 0);
+	double diffX;
+	double diffY;
+	double diffZ;
+
+	int listSize = openList.size();
+
+	for (int i = 0; i < listSize; i++)
+	{
+		temp.setX(openList.front().getX());
+		temp.setY(openList.front().getY());
+		temp.setZ(openList.front().getZ());
+
+		diffX = fabs(temp.getX() - x);
+		diffY = fabs(temp.getY() - y);
+		diffZ = fabs(temp.getZ() - z);
+
+
+
+		if((diffX < 0.1) && (diffY < 0.1) && (diffZ < 0.1)){
+//		if((diffX < 0.1) && (diffY < 0.1)){
+			return true;
+		}
+		else
+		{
+			openList.pop_front();
+			openList.push_back(temp);
+		}
+	}
+	return false;
+}

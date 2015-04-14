@@ -1,0 +1,86 @@
+
+ ----------------------------------------------------------------------------------------------------
+| 1.Schritte die man in jedem Fall machen sollte                                                     |
+| Matlab starten, in den Ordner ./Umgebungsmodell wechseln                                           |
+| In derKommandozeile von Matlab nacheinander folgende Befehle ausführen:                            |
+|                                                                                                    |
+| >> world = vrworld('walls')		% Erzeugt eine neue vrworld, in der die Simulationen stattfinden |
+| >> open(world)					% Öffnet world zur Bearbeitung                                   |
+| >> view(world)					% Jetzt kann man etwas sehen                                     |
+| >> nodes(world) 					% zeigt alle Objekte mit Namen in der vrworld an                 |
+-----------------------------------------------------------------------------------------------------
+
+ ----------------------------------------------------------------------------------------------------
+| 2. Wenn man eine Wand bauen will                                                                   |
+| Im Ornder ./Umgebungsmodell                                                                        |
+| >> newWall(x, v, w, i)	% x = Punkt an dem die Wand beginnen soll                                |
+| 						% v = Vektor der einen Kante                                                 |
+| 						% w = Vektor der anderen Kante                                               |
+| 						% i = integer, die der Wand einen eigenen Namen gibt ( = 'wall_i')           |
+|						% v ist die untere Kante, w die die nach oben geht                           |
+|                                                                                                    |
+| Will man gleich mehrere Wände bauen, die in einer Matrix zusammengefasst sind:                     |
+| >> raum(a)				% wobei a eine (n x 9) Matrix ist, mit n-Wänden gegeben durch x, w, v    |
+|                                                                                                    |
+| Will man alle Wände löschen:                                                                       |
+| >> delete(vrworld)		% vrworld ist die Welt in der man die Wände löschen will                 |
+| einzelne Wände können mit                                                                          |
+| >>delete(world.wandname) gelöscht werden, die Welt muss dazu offen sein                            |
+| 						% der Name einer Wand ist für gewöhnlich wall_i                              |
+| will man sich alle Wände als Matrix zurückgeben lassen:                                            |
+| >>walls = getObjects(world) %world = vrworld in der gearbeitet wird                                |
+|                                                                                                    | 
+| Es ist noch NICHT möglich Dachschrägen oder sonstige unnormale korrekt zu bauen                    |
+|	Diese stehen dann irgendwie schief irgendwo, also Glückssache wo sie landen                      |
+|	bewegt werden können sie mit world.wandname.translation = [x y z],                               |
+|	damit wird der Mittelpunkt verschoben;                                                           |
+|	gedreht werden sie mit world.wandname.rotation = [rotationsachse, winkel]                        |
+ ----------------------------------------------------------------------------------------------------
+
+ ----------------------------------------------------------------------------------------------------
+| 3. Hindernisse                                                                                     |
+| Im Ordner ./Umgebungsmodell                                                                        |
+| Es gibt zwei Arten von Hindernissen: Spheres and Boxes                                             |
+| neue Sphere:                                                                                       |
+| >>newSphere(position, radius, i)	% position = Position                                            |
+| 					    			% radius = Radius der Kugel                                      |
+|                                   % i = integer, für den Namen der Sphere ( = 'sphere_i')          |
+| verschoben wird eine Sphere mit world.spherename.positionb = [x y z]                               |
+| eine Größenänderung geschieht mit world.spherename.sizeb = [x y z]                                 |
+|                                                                                                    | 
+|neue Box erzeugen:                                                                                  |
+| >>newBox(position, size, i)       % position = Position                                            |
+|                                   % size = Ausdehung in die drei Richtungen [x y z]                |
+|                                   % i = integer, für den Namen der Box ( = 'box_i')                |
+| verschoben wird eine Box mit world.boxname.positionb = [x y z]                                     |
+| eine Größenänderung geschieht mit world.boxname.sizeb = [x y z]                                    |
+| um einzelne Objekte zu löschen:                                                                    |
+| >>delete(world.objectName)                                                                         |
+| Um alle Objekte zu erhalten:                                                                       |
+| >>[walls, boxes, spheres] = getObjects(world)                                                      |
+|									% Man erhält drei Matrizen, welche die jeweiligen Werte          |
+|									  enthalten                                                      |
+ ----------------------------------------------------------------------------------------------------
+
+ ----------------------------------------------------------------------------------------------------
+| 4. Modelle                                                                                         |
+| 4.1) PlaneSensors2                                                                                 |
+|	Im Prinzip selbes Modell wie PlaneSensors1 von Florian Mutter								     |
+|	aber mit Wanderzeugung für die Simulation                                                        |
+| 4.2) freedom                                                                                       |
+|	In den 'Flaechen'-Kasten kann eine n x 9 Matrix für die Wänden gelegt werden                     |
+|	diese sind dann in der Simulation zu sehen.                                                      |
+|	In den 6DoF-Kasten kann man insgesamt 6 Werte eingeben, jeweils 3 für Kraft und Drehmoment       |
+|	Diese werden umgerechnet und bringen den Falter zum fliegen                                      |
+|	Falls das Fenster für die Simulation nicht von alleine aufgeht                                   |
+|		-> Doppelklick auf den bunten Kasten                                                         |
+ ----------------------------------------------------------------------------------------------------
+
+ ----------------------------------------------------------------------------------------------------
+| 5. sonstiges                                                                                       |
+| Die Datei fortiss.txt enthält Matrizen die ungefähr das Gebäude bilden,                            |
+| 	einfach mit copy-paste in die raumfunktion klatschen und voilá.                                  |
+ ----------------------------------------------------------------------------------------------------
+
+Stefanie Gareis, Fr 13 Aug 2010 13:37:45 CEST 
+

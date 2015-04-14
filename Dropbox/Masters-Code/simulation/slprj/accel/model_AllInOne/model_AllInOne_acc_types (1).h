@@ -1,0 +1,22 @@
+#include "__cf_model_AllInOne.h"
+#ifndef RTW_HEADER_model_AllInOne_acc_types_h_
+#define RTW_HEADER_model_AllInOne_acc_types_h_
+#include "rtwtypes.h"
+typedef struct P_CoreSubsys_model_AllInOne_k_T_
+P_CoreSubsys_model_AllInOne_k_T ; typedef struct
+P_CoreSubsys_model_AllInOne_kf_T_ P_CoreSubsys_model_AllInOne_kf_T ; typedef
+struct P_CoreSubsys_model_AllInOne_kfm0_T_ P_CoreSubsys_model_AllInOne_kfm0_T
+; typedef struct P_CoreSubsys_model_AllInOne_T_ P_CoreSubsys_model_AllInOne_T
+; typedef struct P_CoreSubsys_model_AllInOne_kfm0i_T_
+P_CoreSubsys_model_AllInOne_kfm0i_T ; typedef struct P_BO_model_AllInOne_T_
+P_BO_model_AllInOne_T ; typedef struct P_CoreSubsys_model_AllInOne_min_T_
+P_CoreSubsys_model_AllInOne_min_T ; typedef struct
+P_CoreSubsys_model_AllInOne_minl_T_ P_CoreSubsys_model_AllInOne_minl_T ;
+typedef struct P_CoreSubsys_model_AllInOne_minlgp_T_
+P_CoreSubsys_model_AllInOne_minlgp_T ; typedef struct
+P_CoreSubsys_model_AllInOne_mi_T_ P_CoreSubsys_model_AllInOne_mi_T ; typedef
+struct P_CoreSubsys_model_AllInOne_m_T_ P_CoreSubsys_model_AllInOne_m_T ;
+typedef struct P_CoreSubsys_model_AllInOne_f_T_
+P_CoreSubsys_model_AllInOne_f_T ; typedef struct P_model_AllInOne_T_
+P_model_AllInOne_T ;
+#endif

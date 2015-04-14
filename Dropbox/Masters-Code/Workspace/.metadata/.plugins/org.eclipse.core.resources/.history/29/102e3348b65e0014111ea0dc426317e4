@@ -1,0 +1,174 @@
+#include <iostream>
+#include <unistd.h>
+#include <cstdlib>
+
+#include <stdio.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <netinet/in.h>
+#include "exchange.pb.h"
+#include <queue>
+#include <deque>
+#include <list>
+#include <errno.h>
+
+
+using namespace std;
+
+void server_main();
+void client_main();
+void varInit();
+
+// Server Variables
+int sockSr;
+struct sockaddr_in server_socket_sr;
+struct sockaddr_in client_socket_sr;
+int oneSr = 1;
+socklen_t client_len;
+queue<Data> dataQueue;
+//------------------------
+
+//Client Variables
+int sockCl;
+struct sockaddr_in server_socket_cl;
+int oneCl=1;
+int buffer[] = {1};
+//------------------------------
+
+//------------------------------
+
+int main()
+{
+	varInit();
+	while(1){
+		server_main();
+		client_main();
+	}
+	return 0;
+}
+
+void varInit(){
+	//Server Initialization
+		if ((sockSr = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP)) < 0)
+			exit(0);
+
+		setsockopt(sockSr, SOL_SOCKET, SO_REUSEPORT, &oneSr, sizeof(oneSr));
+
+		memset(&server_socket_sr, 0, sizeof(server_socket_sr));
+		server_socket_sr.sin_family = AF_INET;
+		server_socket_sr.sin_addr.s_addr = htonl(INADDR_ANY);
+		server_socket_sr.sin_port = htons(5555);
+
+		client_len = sizeof(client_socket_sr);
+
+		if (bind(sockSr, (struct sockaddr *) &server_socket_sr, sizeof(server_socket_sr))< 0)
+			exit(0);
+		//------------------------------------------------------------------
+
+		//Client Initialization
+		if ((sockCl = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP)) < 0)
+			exit(0);
+
+		setsockopt(sockCl, SOL_SOCKET, SO_BROADCAST, &oneCl, sizeof(oneCl));
+
+		memset(&server_socket_cl, 0, sizeof(server_socket_cl));
+		server_socket_cl.sin_family = AF_INET;
+		server_socket_cl.sin_addr.s_addr = inet_addr("192.168.20.255");
+		server_socket_cl.sin_port = htons(5554);
+		//-----------------------------------------------------------------
+		cout << "Init Done" << endl;
+}
+
+void server_main()
+{
+	cout << "s" << endl;
+	Data receive;
+	SrfData srf;
+	int rcv;
+	std::vector<uint32_t> encodedData;
+//	receive.ParseFromArray(encodedData.data(),encodedData.size());
+
+//	encodedData.reserve(65536);
+	encodedData.resize(65536);
+
+	if ((rcv = recvfrom(sockSr, encodedData.data(), 65536, 0,(struct sockaddr *) &client_socket_sr, &client_len)) < 0){
+		cout << "Recieving error number: " << errno << endl;
+		return;
+		//exit(0);
+	}
+//	cout << "rcv " << rcv << endl;
+//		for (int i = 0; i < encodedData.size(); i++)
+//			cout << encodedData.at(i) << "  ";
+//		cout << "\n**" << encodedData.size() << "\n";
+//	encodedData.resize(rcv);
+//		for (int i = 0; i < encodedData.size(); i++)
+//			cout << encodedData.at(i) << "  ";
+//		cout << "\n**" << encodedData.size() << " " << rcv << "\n";
+
+	receive.ParseFromArray(encodedData.data(), encodedData.size());
+
+	dataQueue.push(receive);
+	//Call path planning subroutine here
+
+	cout << "XPos: " <<  receive.xpos() << endl;
+////		cout << receive.srfdata_size() << endl;
+//	if (receive.srfdata_size() > 0)
+//	{
+//		srf = receive.srfdata(receive.srfdata_size()-1);
+//		if (srf.has_srf_gnd())
+//		{
+//			cout << "Got " << srf.srf_gnd() << endl;
+//
+//		}
+//		else
+//		{
+//			cout << "Sorry" << endl;
+//		}
+//	}
+//	else{
+//		cout << "Messege is empty!" <<endl;
+//	}
+//	cout <<endl;
+
+//	cout << "Client connected: " << inet_ntoa(client_socket_sr.sin_addr)
+//			<< "\t" << ntohs(client_socket_sr.sin_port) << endl << endl;
+	//	google::protobuf::ShutdownProtobufLibrary();
+}
+
+void client_main()
+{
+	cout << "c\n" << endl << endl;
+
+
+	int sent;
+//		sleep(1);
+	usleep(200000);
+	//         sizeof(int) // argument 3 in sendto
+	//sent = send(sock, (char*)buffer, sizeof(int), MSG_DONTWAIT, (struct sockaddr *) &server_socket, sizeof(server_socket)
+	if ((sent = sendto(sockCl, (char*)buffer, sizeof(int), MSG_DONTWAIT, (struct sockaddr *) &server_socket_cl, sizeof(server_socket_cl))) < 0){
+//			cout << "here --------------" << buffer[0] << endl;
+//			cout << "Error number is : " << errno << endl<<endl;
+		if(errno == EAGAIN)
+			{
+//					cout << "here 1 and the buffer value is : "<< buffer[0]<< endl;
+				return;
+			}
+			else
+			if ( errno == EWOULDBLOCK)
+			{
+				cout << "here 2"<< endl;
+				return;
+			}
+			else{
+				return;
+//					exit(0);
+			}
+	}
+//		cout << "here buffer is incremented-----------------------------" << buffer[0]<< endl;
+	buffer[0] = buffer[0] + 1;
+//			usleep(10000);
+//	cout <<"buffer: "<< buffer[0] << endl;
+}

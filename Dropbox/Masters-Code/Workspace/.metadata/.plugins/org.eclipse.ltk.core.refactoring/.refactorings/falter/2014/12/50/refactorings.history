@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;falter/src/repAStar.h&apos; to &apos;TS.h&apos;" description="Rename resource &apos;repAStar.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/repAStar.h" name="TS.h" stamp="1418058647574" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;falter/src/repAStar.cpp&apos; to &apos;TS.cpp&apos;" description="Rename resource &apos;repAStar.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/repAStar.cpp" name="TS.cpp" stamp="1418058665139" updateReferences="true"/>
+</session>

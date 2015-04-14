@@ -1,0 +1,42 @@
+#!/bin/bash
+
+default_ip='192.168.17.159'
+
+
+if [ $# -gt 0 ]; then
+	default_ip='${1}'
+fi
+
+uav='root@'${default_ip}
+
+uav_path='/tmp/'
+
+src_path='/home/falter/falter_eclipse_new'
+
+falter_user='root'
+
+scp ${src_path}/org.fortiss.falter.control/Release/control ${src_path}/org.fortiss.falter.perception/Release/perception ${src_path}/org.fortiss.falter.execution/Release/flight_manager ./control_params ./start.sh ./setup.sh ${uav}:${uav_path}
+#scp ${src_path}/org.fortiss.falter.perception/Release/perception ${uav}:${uav_path}
+#scp ${src_path}/org.fortiss.falter.pmd/Release/pmd ${uav}:${uav_path}
+#scp ${src_path}/org.fortiss.falter.particle_filter/Release/particle_filter ${uav}:${uav_path}
+#scp ${src_path}/org.fortiss.falter.execution/Release/flight_manager ${uav}:${uav_path}
+#scp ./umount.sh ${uav}:${uav_path}
+
+#if [ "` ssh $uav 'lsmod | grep rtai_shm' `" = "" ]; then
+#	echo inserting rtai shm module
+#	ssh ${uav} 'insmod /usr/realtime/modules/rtai_shm.ko'
+#fi
+
+#if [ "` ssh ${uav} 'ls /tmp | grep usb' `" = "" ]; then
+#	echo creating folder usb
+#	ssh ${uav} 'mkdir /tmp/usb'
+#fi
+
+#if [ "` ssh ${uav} 'ls /dev | grep sdb1' `" != "" ]; then
+#	echo mounting usb-stick
+#	ssh ${uav} 'mount -o async /dev/sdb1 /tmp/usb'
+#else
+#	echo no usb stick found. 
+#	echo logs will be written to temporary file system.
+#fi
+

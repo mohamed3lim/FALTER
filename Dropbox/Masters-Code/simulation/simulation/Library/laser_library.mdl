@@ -1,0 +1,5160 @@
+Library {
+  Name			  "laser_library"
+  Version		  7.5
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "ISO-8859-1"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  MaxMDLFileLineLength	  120
+  Created		  "Tue Sep 28 17:59:14 2010"
+  Creator		  "elm"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "falter"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Nov 24 18:36:04 2011"
+  RTWModifiedTimeStamp	  244060556
+  ModelVersionFormat	  "1.%<AutoIncrement:54>"
+  ConfigurationManager	  "None"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  RecordCoverage	  off
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.10.0"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.10.0"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.10.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.10.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    7
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.10.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.10.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.10.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  8
+	  Version		  "1.10.0"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  9
+	  Version		  "1.10.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    6
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      10
+	      Version		      "1.10.0"
+	      Array {
+		Type			"Cell"
+		Dimension		19
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      11
+	      Version		      "1.10.0"
+	      Array {
+		Type			"Cell"
+		Dimension		17
+		Cell			"GeneratePreprocessorConditionals"
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"PortableWordSizes"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      TargetFunctionLibrary   "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTCodeCoverageTool     "None"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition    " [ 280, 124, 1160, 754 ] "
+    }
+    PropName		    "ConfigurationSets"
+  }
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Abs
+      ZeroCross		      on
+      SampleTime	      "-1"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      ActionPort
+      InitializeStates	      "held"
+      PropagateVarSize	      "Only when execution is resumed"
+      ActionType	      "unset"
+    }
+    Block {
+      BlockType		      Assignment
+      NumberOfDimensions      "1"
+      IndexMode		      "One-based"
+      OutputInitialize	      "Initialize using input port <Y0>"
+      DiagnosticForDimensions "None"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Concatenate
+      NumInputs		      "2"
+      ConcatenateDimension    "1"
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "fixdt(1,16,0)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      DotProduct
+      SampleTime	      "-1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutputDataTypeScalingMode	"Same as first input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      ForEach
+      IndexMode		      "Zero-based"
+      IterationIndexDataType  "int32"
+      ShowIterationIndex      off
+      StateHandling	      "Separate states for each iteration"
+      StateReset	      "held"
+      ShowResetFlag	      off
+      NeedActiveIterationSignal	off
+      ShowActiveIterationCount off
+      ShowActiveIterationFlag off
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "fixdt(1,16,0)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "[]"
+      ParamDataTypeStr	      "Inherit: Same as input"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      If
+      NumInputs		      "1"
+      IfExpression	      "u1 > 0"
+      ShowElse		      on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Math
+      Operator		      "exp"
+      OutputSignalType	      "auto"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      IntermediateResultsDataTypeStr "Inherit: Inherit via internal rule"
+      AlgorithmType	      "Newton-Raphson"
+      Iterations	      "3"
+    }
+    Block {
+      BlockType		      Memory
+      X0		      "0"
+      InheritSampleTime	      off
+      LinearizeMemory	      off
+      LinearizeAsDelay	      off
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+    Block {
+      BlockType		      Merge
+      Inputs		      "2"
+      InitialOutput	      "[]"
+      AllowUnequalInputPortWidths off
+      InputPortOffsets	      "[]"
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Reshape
+      OutputDimensionality    "1-D array"
+      OutputDimensions	      "[1,1]"
+    }
+    Block {
+      BlockType		      Rounding
+      Operator		      "floor"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      SFunctionDeploymentMode off
+    }
+    Block {
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Selector
+      NumberOfDimensions      "1"
+      IndexMode		      "One-based"
+      InputPortWidth	      "-1"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Signum
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+  }
+  System {
+    Name		    "laser_library"
+    Location		    [156, 478, 1128, 1021]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    1426
+    Block {
+      BlockType		      SubSystem
+      Name		      "Laser Scanner"
+      SID		      1215
+      Ports		      [4, 1]
+      Position		      [310, 144, 460, 256]
+      BackgroundColor	      "lightBlue"
+      LibraryVersion	      "*1.52"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskPromptString	      "Scanner Parameters"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "scannerParameters=@1;"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "[0 0 0 1 0 0]"
+      System {
+	Name			"Laser Scanner"
+	Location		[1, 79, 1679, 1021]
+	Open			on
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "UAV Position"
+	  SID			  1216
+	  Position		  [435, 473, 465, 487]
+	  IconDisplay		  "Port number"
+	  SampleTime		  "0.0001"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "UAV Rotations"
+	  SID			  1217
+	  Position		  [435, 313, 465, 327]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  SampleTime		  "0.0001"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "UAV DCM"
+	  SID			  1218
+	  Position		  [435, 433, 465, 447]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  SampleTime		  "0.0001"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Walls"
+	  SID			  1219
+	  Position		  [435, 553, 465, 567]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  SampleTime		  "0.0001"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Angular Resolution"
+	  SID			  1220
+	  Position		  [25, 341, 85, 379]
+	  Value			  "0.00628"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Counter for \nrotation steps\n(Starts with 0)"
+	  SID			  1221
+	  Ports			  [1, 1]
+	  Position		  [130, 27, 290, 143]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Counter for \nrotation steps\n(Starts with 0)"
+	    Location		    [210, 327, 931, 770]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Angular\nResolution"
+	      SID		      1222
+	      Position		      [610, 83, 640, 97]
+	      BlockMirror	      on
+	      IconDisplay	      "Port number"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "2 PI"
+	      SID		      1223
+	      Position		      [565, 15, 595, 45]
+	      BlockRotation	      270
+	      BlockMirror	      on
+	      NamePlacement	      "alternate"
+	      Value		      "2*pi"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Increment\nReal World"
+	      SID		      1224
+	      Ports		      [1, 1]
+	      Position		      [275, 185, 305, 215]
+	      LibraryVersion	      "1.216"
+	      SourceBlock	      "simulink/Additional Math\n& Discrete/Additional Math:\nIncrement - Decrement/Increment\nReal"
+	      " World"
+	      SourceType	      "Real World Value Increment"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData "off"
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	    }
+	    Block {
+	      BlockType		      Memory
+	      Name		      "Memory"
+	      SID		      1225
+	      Position		      [185, 185, 215, 215]
+	      InheritSampleTime	      on
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "NumSteps"
+	      SID		      1226
+	      Ports		      [2, 1]
+	      Position		      [500, 67, 530, 98]
+	      BlockMirror	      on
+	      NamePlacement	      "alternate"
+	      Inputs		      "*/"
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^-10"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      RndMeth		      "Floor"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Rounding
+	      Name		      "Rounding\nFunction"
+	      SID		      1227
+	      Position		      [415, 67, 455, 103]
+	      BlockMirror	      on
+	      NamePlacement	      "alternate"
+	    }
+	    Block {
+	      BlockType		      Math
+	      Name		      "step number"
+	      SID		      1228
+	      Ports		      [2, 1]
+	      Position		      [275, 62, 305, 93]
+	      BlockMirror	      on
+	      NamePlacement	      "alternate"
+	      Operator		      "mod"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Step"
+	      SID		      1229
+	      Position		      [15, 73, 45, 87]
+	      BlockMirror	      on
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Rounding\nFunction"
+	      SrcPort		      1
+	      DstBlock		      "step number"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "NumSteps"
+	      SrcPort		      1
+	      DstBlock		      "Rounding\nFunction"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "2 PI"
+	      SrcPort		      1
+	      Points		      [0, 25]
+	      DstBlock		      "NumSteps"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Angular\nResolution"
+	      SrcPort		      1
+	      DstBlock		      "NumSteps"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "step number"
+	      SrcPort		      1
+	      Points		      [-190, 0]
+	      Branch {
+		Points			[0, 120]
+		DstBlock		"Memory"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Step"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Increment\nReal World"
+	      SrcPort		      1
+	      Points		      [45, 0; 0, -130]
+	      DstBlock		      "step number"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Memory"
+	      SrcPort		      1
+	      DstBlock		      "Increment\nReal World"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  SID			  1230
+	  Position		  [1045, 385, 1075, 415]
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  ParameterDataType	  "fixdt(1, 16)"
+	  ParameterScaling	  "2^0"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Hold output of previous\nsimulation step"
+	  SID			  1231
+	  Ports			  [1, 1, 0, 0, 0, 0, 0, 1]
+	  Position		  [1010, 159, 1135, 211]
+	  LibraryVersion	  "1.216"
+	  TreatAsAtomicUnit	  on
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Hold output of previous\nsimulation step"
+	    Location		    [342, 471, 840, 771]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      SID		      1232
+	      Position		      [75, 78, 105, 92]
+	      IconDisplay	      "Port number"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	    }
+	    Block {
+	      BlockType		      ActionPort
+	      Name		      "Action Port"
+	      SID		      1233
+	      Position		      [170, 15, 229, 43]
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      SID		      1234
+	      Position		      [325, 78, 355, 92]
+	      IconDisplay	      "Port number"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  If
+	  Name			  "If current step is\na measurement step,\npermorme it."
+	  SID			  1235
+	  Ports			  [2, 2]
+	  Position		  [350, 76, 450, 114]
+	  NumInputs		  "2"
+	  IfExpression		  "u1 < u2"
+	}
+	Block {
+	  BlockType		  Memory
+	  Name			  "Memory"
+	  SID			  1236
+	  Position		  [920, 265, 950, 295]
+	  BlockRotation		  270
+	}
+	Block {
+	  BlockType		  Merge
+	  Name			  "Merge"
+	  SID			  1237
+	  Ports			  [2, 1]
+	  Position		  [1215, 370, 1255, 410]
+	  InitialOutput		  "0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "NumDistances"
+	  SID			  1238
+	  Position		  [25, 265, 55, 295]
+	  Value			  "683"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Perform Measurement Step"
+	  SID			  1239
+	  Ports			  [9, 1, 0, 0, 0, 0, 0, 1]
+	  Position		  [490, 225, 885, 575]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Perform Measurement Step"
+	    Location		    [1, 79, 1679, 1021]
+	    Open		    on
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Step"
+	      SID		      1240
+	      Position		      [30, 98, 60, 112]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Num Measruement\nSteps"
+	      SID		      1241
+	      Position		      [30, 133, 60, 147]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "UAV Rotations"
+	      SID		      1242
+	      Position		      [30, 183, 60, 197]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Angular\nResolution"
+	      SID		      1243
+	      Position		      [30, 233, 60, 247]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Sensor\nParameters"
+	      SID		      1244
+	      Position		      [30, 328, 60, 342]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "DCM"
+	      SID		      1245
+	      Position		      [30, 398, 60, 412]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "UAV Position"
+	      SID		      1246
+	      Position		      [30, 463, 60, 477]
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Range"
+	      SID		      1247
+	      Position		      [30, 513, 60, 527]
+	      Port		      "8"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Walls"
+	      SID		      1248
+	      Position		      [30, 618, 60, 632]
+	      Port		      "9"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      ActionPort
+	      Name		      "Action Port"
+	      SID		      1249
+	      Position		      [65, 15, 124, 43]
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Add UAV Position"
+	      SID		      1250
+	      Ports		      [2, 1]
+	      Position		      [375, 407, 405, 438]
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^-10"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Compute Distance"
+	      SID		      1251
+	      Ports		      [3, 1]
+	      Position		      [815, 201, 985, 279]
+	      LibraryVersion	      "1.216"
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      System {
+		Name			"Compute Distance"
+		Location		[187, 218, 1203, 768]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "Position"
+		  SID			  1252
+		  Position		  [120, 193, 150, 207]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "fixdt(1, 16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Direction"
+		  SID			  1253
+		  Position		  [120, 218, 150, 232]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  OutDataType		  "fixdt(1, 16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Walls"
+		  SID			  1254
+		  Position		  [120, 243, 150, 257]
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		  OutDataType		  "fixdt(1, 16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Compute distances to\nall walls"
+		  SID			  1255
+		  Ports			  [3, 1]
+		  Position		  [240, 185, 440, 265]
+		  LibraryVersion	  "1.216"
+		  TreatAsAtomicUnit	  on
+		  MinAlgLoopOccurrences	  off
+		  PropExecContextOutsideSubsystem off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  Opaque		  off
+		  RequestExecContextInheritance	off
+		  MaskHideContents	  off
+		  System {
+		    Name		    "Compute distances to\nall walls"
+		    Location		    [251, 251, 1203, 826]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "A4"
+		    PaperUnits		    "centimeters"
+		    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Position"
+		    SID			    1256
+		    Position		    [95, 388, 125, 402]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    Partition		    "off"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Direction"
+		    SID			    1257
+		    Position		    [95, 423, 125, 437]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    Partition		    "off"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Walls"
+		    SID			    1258
+		    Position		    [95, 238, 125, 252]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    Partition		    "on"
+		    PartitionDimension	    "1"
+		    PartitionWidth	    "1"
+		    }
+		    Block {
+		    BlockType		    Abs
+		    Name		    "Abs"
+		    SID			    1259
+		    Position		    [230, 230, 260, 260]
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Compute Distance to single Wall"
+		    SID			    1260
+		    Ports		    [3, 1, 0, 0, 0, 0, 0, 1]
+		    Position		    [465, 374, 655, 486]
+		    LibraryVersion	    "1.216"
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    System {
+		    Name		    "Compute Distance to single Wall"
+		    Location		    [1, 119, 1679, 1021]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "A4"
+		    PaperUnits		    "centimeters"
+		    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Position"
+		    SID			    1261
+		    Position		    [115, 453, 145, 467]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Direction"
+		    SID			    1262
+		    Position		    [115, 323, 145, 337]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Wall"
+		    SID			    1263
+		    Position		    [115, 163, 145, 177]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    ActionPort
+		    Name		    "For intersection of wall and \nmeasurment beam, the sys. of lin. equ.\nVertex + r*Edge1 + f*Edge2 = P"
+		    "osition + t*Direction\nneeds to be solved."
+		    SID			    1264
+		    Position		    [135, 20, 194, 48]
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Beam is parallel,\nthus 0 is returned"
+		    SID			    1265
+		    Ports		    [0, 1, 0, 0, 0, 0, 0, 1]
+		    Position		    [1320, 276, 1450, 334]
+		    LibraryVersion	    "1.216"
+		    TreatAsAtomicUnit	    on
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    System {
+		    Name		    "Beam is parallel,\nthus 0 is returned"
+		    Location		    [342, 471, 840, 771]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "A4"
+		    PaperUnits		    "centimeters"
+		    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    ActionPort
+		    Name		    "Action Port"
+		    SID			    1266
+		    Position		    [170, 15, 229, 43]
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    1267
+		    Position		    [200, 70, 230, 100]
+		    Value		    "0"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Distance=0"
+		    SID			    1268
+		    Position		    [325, 78, 355, 92]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    DstBlock		    "Distance=0"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Compute Distance"
+		    SID			    1269
+		    Ports		    [7, 1, 0, 0, 0, 0, 0, 1]
+		    Position		    [1320, 389, 1450, 581]
+		    LibraryVersion	    "1.216"
+		    TreatAsAtomicUnit	    on
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    System {
+		    Name		    "Compute Distance"
+		    Location		    [162, 228, 1661, 1021]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "A4"
+		    PaperUnits		    "centimeters"
+		    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "D"
+		    SID			    1270
+		    Position		    [75, 163, 105, 177]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Dt"
+		    SID			    1271
+		    Position		    [75, 123, 105, 137]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Position"
+		    SID			    1272
+		    Position		    [75, 258, 105, 272]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Direction"
+		    SID			    1273
+		    Position		    [75, 203, 105, 217]
+		    Port		    "4"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Vertex"
+		    SID			    1274
+		    Position		    [75, 348, 105, 362]
+		    Port		    "5"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Vertex (lower left corner)"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Edge1"
+		    SID			    1275
+		    Position		    [75, 403, 105, 417]
+		    Port		    "6"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Edge2"
+		    SID			    1276
+		    Position		    [75, 458, 105, 472]
+		    Port		    "7"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    ActionPort
+		    Name		    "Compute Distance"
+		    SID			    1277
+		    Position		    [170, 15, 229, 43]
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Compute distance from position to \nintersection point"
+		    SID			    1279
+		    Ports		    [3, 1, 0, 0, 0, 0, 0, 1]
+		    Position		    [1210, 253, 1320, 327]
+		    LibraryVersion	    "1.216"
+		    TreatAsAtomicUnit	    on
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    System {
+		    Name		    "Compute distance from position to \nintersection point"
+		    Location		    [15, 79, 1512, 817]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "A4"
+		    PaperUnits		    "centimeters"
+		    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "p (Intersection Point)"
+		    SID			    1280
+		    Position		    [75, 563, 105, 577]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Position"
+		    SID			    1281
+		    Position		    [75, 628, 105, 642]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Direction"
+		    SID			    1408
+		    Position		    [75, 88, 105, 102]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    ActionPort
+		    Name		    "Action Port"
+		    SID			    1282
+		    Position		    [105, 15, 164, 43]
+		    }
+		    Block {
+		    BlockType		    Demux
+		    Name		    "Demux"
+		    SID			    1424
+		    Ports		    [1, 3]
+		    Position		    [355, 76, 360, 114]
+		    ShowName		    off
+		    Outputs		    "3"
+		    DisplayOption	    "bar"
+		    }
+		    Block {
+		    BlockType		    Demux
+		    Name		    "Demux1"
+		    SID			    1425
+		    Ports		    [1, 3]
+		    Position		    [355, 356, 360, 394]
+		    ShowName		    off
+		    Outputs		    "3"
+		    DisplayOption	    "bar"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "Distance"
+		    SID			    1283
+		    Ports		    [1, 1]
+		    Position		    [320, 548, 390, 592]
+		    LibraryVersion	    "1.50"
+		    SourceBlock		    "falter_library/norm"
+		    SourceType		    "SubSystem"
+		    ShowPortLabels	    "FromPortIcon"
+		    SystemSampleTime	    "-1"
+		    FunctionWithSeparateData "off"
+		    RTWMemSecFuncInitTerm   "Inherit from model"
+		    RTWMemSecFuncExecute    "Inherit from model"
+		    RTWMemSecDataConstants  "Inherit from model"
+		    RTWMemSecDataInternal   "Inherit from model"
+		    RTWMemSecDataParameters "Inherit from model"
+		    }
+		    Block {
+		    BlockType		    Signum
+		    Name		    "Sign3"
+		    SID			    1423
+		    Position		    [755, 320, 785, 350]
+		    BlockRotation	    270
+		    BlockMirror		    on
+		    NamePlacement	    "alternate"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    SID			    1284
+		    Ports		    [2, 1]
+		    Position		    [255, 560, 275, 580]
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "|+-"
+		    InputSameDT		    off
+		    OutDataTypeMode	    "Inherit via internal rule"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum4"
+		    SID			    1422
+		    Ports		    [3, 1]
+		    Position		    [685, 220, 715, 250]
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "+|+|+"
+		    InputSameDT		    off
+		    OutDataTypeMode	    "Inherit via internal rule"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "correct measurement sign"
+		    SID			    1412
+		    Ports		    [2, 1]
+		    Position		    [685, 547, 715, 578]
+		    InputSameDT		    off
+		    OutDataTypeMode	    "Inherit via internal rule"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "mult"
+		    SID			    1410
+		    Ports		    [2, 1]
+		    Position		    [480, 77, 510, 108]
+		    InputSameDT		    off
+		    OutDataTypeMode	    "Inherit via internal rule"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "mult1"
+		    SID			    1416
+		    Ports		    [2, 1]
+		    Position		    [480, 217, 510, 248]
+		    InputSameDT		    off
+		    OutDataTypeMode	    "Inherit via internal rule"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "mult2"
+		    SID			    1420
+		    Ports		    [2, 1]
+		    Position		    [480, 362, 510, 393]
+		    InputSameDT		    off
+		    OutDataTypeMode	    "Inherit via internal rule"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "distance"
+		    SID			    1285
+		    Position		    [890, 558, 920, 572]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Demux1"
+		    SrcPort		    3
+		    DstBlock		    "mult2"
+		    DstPort		    2
+		    }
+		    Line {
+		    Labels		    [2, 0]
+		    SrcBlock		    "Demux1"
+		    SrcPort		    2
+		    Points		    [30, 0; 0, -135]
+		    DstBlock		    "mult1"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Demux1"
+		    SrcPort		    1
+		    Points		    [60, 0; 0, -265]
+		    DstBlock		    "mult"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Demux"
+		    SrcPort		    3
+		    Points		    [85, 0; 0, 265]
+		    DstBlock		    "mult2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Demux"
+		    SrcPort		    2
+		    Points		    [30, 0; 0, 130]
+		    DstBlock		    "mult1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Demux"
+		    SrcPort		    1
+		    DstBlock		    "mult"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Sign3"
+		    SrcPort		    1
+		    Points		    [0, 135; -135, 0; 0, 65]
+		    DstBlock		    "correct measurement sign"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Sum4"
+		    SrcPort		    1
+		    Points		    [50, 0]
+		    DstBlock		    "Sign3"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "mult2"
+		    SrcPort		    1
+		    Points		    [185, 0]
+		    DstBlock		    "Sum4"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "mult1"
+		    SrcPort		    1
+		    DstBlock		    "Sum4"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "correct measurement sign"
+		    SrcPort		    1
+		    DstBlock		    "distance"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Distance"
+		    SrcPort		    1
+		    DstBlock		    "correct measurement sign"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "mult"
+		    SrcPort		    1
+		    Points		    [185, 0]
+		    DstBlock		    "Sum4"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Direction"
+		    SrcPort		    1
+		    DstBlock		    "Demux"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    Branch {
+		    Points		    [0, -195]
+		    DstBlock		    "Demux1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Distance"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Position"
+		    SrcPort		    1
+		    Points		    [155, 0]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "p (Intersection Point)"
+		    SrcPort		    1
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Divide"
+		    SID			    1286
+		    Ports		    [2, 1]
+		    Position		    [200, 136, 230, 169]
+		    Inputs		    "*/"
+		    InputSameDT		    off
+		    OutDataTypeMode	    "Inherit via internal rule"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^-10"
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    RndMeth		    "Floor"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Dt/D * Direction"
+		    SID			    1287
+		    Ports		    [2, 1]
+		    Position		    [275, 187, 305, 218]
+		    InputSameDT		    off
+		    OutDataTypeMode	    "Inherit via internal rule"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    If
+		    Name		    "If these 4 cond. are\ntrue, the point is on\nthe wall."
+		    SID			    1289
+		    Ports		    [4, 2]
+		    Position		    [1015, 134, 1140, 191]
+		    NumInputs		    "4"
+		    IfExpression	    "(u1 > 0) & (u2 > 0) & (u3<0) & (u4<0)"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Intersection point lies not \nwithin the wall"
+		    SID			    1290
+		    Ports		    [0, 1, 0, 0, 0, 0, 0, 1]
+		    Position		    [1335, 59, 1425, 101]
+		    NamePlacement	    "alternate"
+		    LibraryVersion	    "1.216"
+		    TreatAsAtomicUnit	    on
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    System {
+		    Name		    "Intersection point lies not \nwithin the wall"
+		    Location		    [342, 471, 840, 771]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "A4"
+		    PaperUnits		    "centimeters"
+		    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    ActionPort
+		    Name		    "Action Port"
+		    SID			    1291
+		    Position		    [170, 15, 229, 43]
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    1292
+		    Position		    [215, 70, 245, 100]
+		    Value		    "0"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "distance=0"
+		    SID			    1293
+		    Position		    [325, 78, 355, 92]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    DstBlock		    "distance=0"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    DotProduct
+		    Name		    "Lower Left and E1"
+		    SID			    1294
+		    Position		    [780, 387, 810, 418]
+		    OutputDataTypeScalingMode "Inherit via internal rule"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^-10"
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    }
+		    Block {
+		    BlockType		    DotProduct
+		    Name		    "Lower Left and E2"
+		    SID			    1295
+		    Position		    [780, 442, 810, 473]
+		    OutputDataTypeScalingMode "Inherit via internal rule"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^-10"
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    }
+		    Block {
+		    BlockType		    Merge
+		    Name		    "Merge"
+		    SID			    1296
+		    Ports		    [2, 1]
+		    Position		    [1490, 190, 1530, 230]
+		    InitialOutput	    "0"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    SID			    1299
+		    Ports		    [2, 1]
+		    Position		    [385, 255, 405, 275]
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "++|"
+		    InputSameDT		    off
+		    OutDataTypeMode	    "Inherit via internal rule"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    Port {
+		    PortNumber		    1
+		    Name		    "p (intersec. point)"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum1"
+		    SID			    1300
+		    Ports		    [2, 1]
+		    Position		    [685, 345, 705, 365]
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "+-|"
+		    InputSameDT		    off
+		    OutDataTypeMode	    "Inherit via internal rule"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum2"
+		    SID			    1301
+		    Ports		    [2, 1]
+		    Position		    [635, 535, 655, 555]
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "+-|"
+		    InputSameDT		    off
+		    OutDataTypeMode	    "Inherit via internal rule"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum3"
+		    SID			    1302
+		    Ports		    [3, 1]
+		    Position		    [275, 530, 305, 560]
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "+|+|+"
+		    InputSameDT		    off
+		    OutDataTypeMode	    "Inherit via internal rule"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    Port {
+		    PortNumber		    1
+		    Name		    "Vertex + E1 + E2\n(upper right corner)"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    DotProduct
+		    Name		    "Upper Right and E1"
+		    SID			    1303
+		    Position		    [780, 537, 810, 568]
+		    OutputDataTypeScalingMode "Inherit via internal rule"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^-10"
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    }
+		    Block {
+		    BlockType		    DotProduct
+		    Name		    "Upper Right and E2"
+		    SID			    1304
+		    Position		    [780, 592, 810, 623]
+		    OutputDataTypeScalingMode "Inherit via internal rule"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^-10"
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Distance"
+		    SID			    1305
+		    Position		    [1560, 203, 1590, 217]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Compute distance from position to \nintersection point"
+		    SrcPort		    1
+		    Points		    [120, 0; 0, -70]
+		    DstBlock		    "Merge"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Intersection point lies not \nwithin the wall"
+		    SrcPort		    1
+		    Points		    [15, 0; 0, 120]
+		    DstBlock		    "Merge"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Merge"
+		    SrcPort		    1
+		    DstBlock		    "Distance"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "If these 4 cond. are\ntrue, the point is on\nthe wall."
+		    SrcPort		    2
+		    Points		    [235, 0]
+		    DstBlock		    "Intersection point lies not \nwithin the wall"
+		    DstPort		    ifaction
+		    }
+		    Line {
+		    SrcBlock		    "If these 4 cond. are\ntrue, the point is on\nthe wall."
+		    SrcPort		    1
+		    Points		    [120, 0]
+		    DstBlock		    "Compute distance from position to \nintersection point"
+		    DstPort		    ifaction
+		    }
+		    Line {
+		    SrcBlock		    "Upper Right and E2"
+		    SrcPort		    1
+		    Points		    [185, 0]
+		    DstBlock		    "If these 4 cond. are\ntrue, the point is on\nthe wall."
+		    DstPort		    4
+		    }
+		    Line {
+		    SrcBlock		    "Upper Right and E1"
+		    SrcPort		    1
+		    Points		    [165, 0; 0, -385]
+		    DstBlock		    "If these 4 cond. are\ntrue, the point is on\nthe wall."
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Sum2"
+		    SrcPort		    1
+		    Points		    [85, 0]
+		    Branch {
+		    Points		    [0, 55]
+		    DstBlock		    "Upper Right and E2"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Upper Right and E1"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    Name		    "Vertex + E1 + E2\n(upper right corner)"
+		    Labels		    [0, 0]
+		    SrcBlock		    "Sum3"
+		    SrcPort		    1
+		    DstBlock		    "Sum2"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Lower Left and E2"
+		    SrcPort		    1
+		    Points		    [145, 0; 0, -305]
+		    DstBlock		    "If these 4 cond. are\ntrue, the point is on\nthe wall."
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Lower Left and E1"
+		    SrcPort		    1
+		    Points		    [125, 0; 0, -265]
+		    DstBlock		    "If these 4 cond. are\ntrue, the point is on\nthe wall."
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Edge2"
+		    SrcPort		    1
+		    Points		    [70, 0]
+		    Branch {
+		    Points		    [0, 110]
+		    DstBlock		    "Sum3"
+		    DstPort		    3
+		    }
+		    Branch {
+		    DstBlock		    "Lower Left and E2"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Edge1"
+		    SrcPort		    1
+		    Points		    [115, 0]
+		    Branch {
+		    Points		    [460, 0]
+		    Branch {
+		    Points		    [0, 205]
+		    DstBlock		    "Upper Right and E2"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [20, 0]
+		    Branch {
+		    Points		    [0, 150]
+		    DstBlock		    "Upper Right and E1"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Lower Left and E1"
+		    DstPort		    2
+		    }
+		    }
+		    }
+		    Branch {
+		    Points		    [0, 135]
+		    DstBlock		    "Sum3"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Sum1"
+		    SrcPort		    1
+		    Points		    [25, 0; 0, 40]
+		    Branch {
+		    DstBlock		    "Lower Left and E1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 55]
+		    DstBlock		    "Lower Left and E2"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    Name		    "Vertex (lower left corner)"
+		    Labels		    [1, 0]
+		    SrcBlock		    "Vertex"
+		    SrcPort		    1
+		    Points		    [180, 0]
+		    Branch {
+		    DstBlock		    "Sum3"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Sum1"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Dt/D * Direction"
+		    SrcPort		    1
+		    Points		    [85, 0]
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Direction"
+		    SrcPort		    1
+		    Points		    [75, 0]
+		    Branch {
+		    Points		    [0, 105]
+		    DstBlock		    "Compute distance from position to \nintersection point"
+		    DstPort		    3
+		    }
+		    Branch {
+		    DstBlock		    "Dt/D * Direction"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Divide"
+		    SrcPort		    1
+		    Points		    [20, 0; 0, 40]
+		    DstBlock		    "Dt/D * Direction"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Position"
+		    SrcPort		    1
+		    Points		    [185, 0]
+		    Branch {
+		    Points		    [0, 25]
+		    DstBlock		    "Compute distance from position to \nintersection point"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Dt"
+		    SrcPort		    1
+		    Points		    [55, 0; 0, 15]
+		    DstBlock		    "Divide"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "D"
+		    SrcPort		    1
+		    Points		    [55, 0; 0, -10]
+		    DstBlock		    "Divide"
+		    DstPort		    2
+		    }
+		    Line {
+		    Name		    "p (intersec. point)"
+		    Labels		    [0, 0]
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    Points		    [235, 0]
+		    Branch {
+		    Labels		    [1, 0]
+		    Points		    [50, 5; 0, 0]
+		    Branch {
+		    DstBlock		    "Compute distance from position to \nintersection point"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Sum1"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    DstBlock		    "Sum2"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "Determinant D of \nEdge1|Edge2|-Direction"
+		    SID			    1306
+		    Ports		    [1, 1]
+		    Position		    [955, 213, 1045, 287]
+		    LibraryVersion	    "1.95"
+		    SourceBlock		    "aerolibutil/Determinant of\n3x3 Matrix"
+		    SourceType		    "Determinant of 3x3 Matrix"
+		    ShowPortLabels	    "FromPortIcon"
+		    SystemSampleTime	    "-1"
+		    FunctionWithSeparateData "off"
+		    RTWMemSecFuncInitTerm   "Inherit from model"
+		    RTWMemSecFuncExecute    "Inherit from model"
+		    RTWMemSecDataConstants  "Inherit from model"
+		    RTWMemSecDataInternal   "Inherit from model"
+		    RTWMemSecDataParameters "Inherit from model"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "Determinant Dt of\nEdge1|Edge2|Position-Vertex"
+		    SID			    1307
+		    Ports		    [1, 1]
+		    Position		    [955, 343, 1045, 417]
+		    LibraryVersion	    "1.95"
+		    SourceBlock		    "aerolibutil/Determinant of\n3x3 Matrix"
+		    SourceType		    "Determinant of 3x3 Matrix"
+		    ShowPortLabels	    "FromPortIcon"
+		    SystemSampleTime	    "-1"
+		    FunctionWithSeparateData "off"
+		    RTWMemSecFuncInitTerm   "Inherit from model"
+		    RTWMemSecFuncExecute    "Inherit from model"
+		    RTWMemSecDataConstants  "Inherit from model"
+		    RTWMemSecDataInternal   "Inherit from model"
+		    RTWMemSecDataParameters "Inherit from model"
+		    }
+		    Block {
+		    BlockType		    Selector
+		    Name		    "Edge 1"
+		    SID			    1308
+		    Ports		    [1, 1]
+		    Position		    [270, 151, 310, 189]
+		    NumberOfDimensions	    "2"
+		    InputPortWidth	    "3"
+		    IndexOptions	    "Select all,Index vector (dialog)"
+		    Indices		    "[1 2 3],[4 5 6]"
+		    OutputSizes		    "1,1"
+		    }
+		    Block {
+		    BlockType		    Selector
+		    Name		    "Edge 2"
+		    SID			    1309
+		    Ports		    [1, 1]
+		    Position		    [270, 206, 310, 244]
+		    NumberOfDimensions	    "2"
+		    InputPortWidth	    "3"
+		    IndexOptions	    "Select all,Index vector (dialog)"
+		    Indices		    "[1 2 3],[7 8 9]"
+		    OutputSizes		    "1,1"
+		    }
+		    Block {
+		    BlockType		    Concatenate
+		    Name		    "Edge1|Edge2|Direction"
+		    SID			    1310
+		    Ports		    [3, 1]
+		    Position		    [815, 229, 870, 271]
+		    NumInputs		    "3"
+		    Mode		    "Multidimensional array"
+		    ConcatenateDimension    "2"
+		    }
+		    Block {
+		    BlockType		    Concatenate
+		    Name		    "Edge1|Edge2|Position-Vertex"
+		    SID			    1311
+		    Ports		    [3, 1]
+		    Position		    [815, 359, 870, 401]
+		    NumInputs		    "3"
+		    Mode		    "Multidimensional array"
+		    ConcatenateDimension    "2"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "Gain"
+		    SID			    1312
+		    Position		    [675, 315, 705, 345]
+		    Gain		    "-1"
+		    ParameterDataTypeMode   "Inherit via internal rule"
+		    ParameterDataType	    "fixdt(1, 16)"
+		    ParameterScaling	    "2^0"
+		    ParamDataTypeStr	    "Inherit: Inherit via internal rule"
+		    OutDataTypeMode	    "Inherit via internal rule"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    If
+		    Name		    "If"
+		    SID			    1313
+		    Ports		    [1, 2]
+		    Position		    [1150, 231, 1250, 269]
+		    IfExpression	    "u1 == 0"
+		    }
+		    Block {
+		    BlockType		    Merge
+		    Name		    "Merge"
+		    SID			    1314
+		    Ports		    [2, 1]
+		    Position		    [1495, 295, 1535, 335]
+		    InitialOutput	    "0"
+		    }
+		    Block {
+		    BlockType		    Reshape
+		    Name		    "Reshape"
+		    SID			    1315
+		    Ports		    [1, 1]
+		    Position		    [390, 158, 420, 182]
+		    OutputDimensionality    "Column vector (2-D)"
+		    }
+		    Block {
+		    BlockType		    Reshape
+		    Name		    "Reshape1"
+		    SID			    1316
+		    Ports		    [1, 1]
+		    Position		    [390, 213, 420, 237]
+		    OutputDimensionality    "Column vector (2-D)"
+		    }
+		    Block {
+		    BlockType		    Reshape
+		    Name		    "Reshape2"
+		    SID			    1317
+		    Ports		    [1, 1]
+		    Position		    [390, 268, 420, 292]
+		    OutputDimensionality    "Column vector (2-D)"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    SID			    1318
+		    Ports		    [2, 1]
+		    Position		    [570, 380, 600, 410]
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "-||+|"
+		    InputSameDT		    off
+		    OutDataTypeMode	    "Inherit via internal rule"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Selector
+		    Name		    "Vertex"
+		    SID			    1319
+		    Ports		    [1, 1]
+		    Position		    [270, 261, 310, 299]
+		    NumberOfDimensions	    "2"
+		    InputPortWidth	    "3"
+		    IndexOptions	    "Select all,Index vector (dialog)"
+		    Indices		    "[1 2 3],[1 2 3]"
+		    OutputSizes		    "1,1"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Distance"
+		    SID			    1320
+		    Position		    [1575, 308, 1605, 322]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "If"
+		    SrcPort		    2
+		    Points		    [30, 0; 0, 113]
+		    DstBlock		    "Compute Distance"
+		    DstPort		    ifaction
+		    }
+		    Line {
+		    SrcBlock		    "If"
+		    SrcPort		    1
+		    Points		    [130, 0]
+		    DstBlock		    "Beam is parallel,\nthus 0 is returned"
+		    DstPort		    ifaction
+		    }
+		    Line {
+		    SrcBlock		    "Merge"
+		    SrcPort		    1
+		    DstBlock		    "Distance"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Compute Distance"
+		    SrcPort		    1
+		    Points		    [15, 0; 0, -160]
+		    DstBlock		    "Merge"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Beam is parallel,\nthus 0 is returned"
+		    SrcPort		    1
+		    DstBlock		    "Merge"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Determinant Dt of\nEdge1|Edge2|Position-Vertex"
+		    SrcPort		    1
+		    Points		    [50, 0; 0, 55]
+		    DstBlock		    "Compute Distance"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Determinant D of \nEdge1|Edge2|-Direction"
+		    SrcPort		    1
+		    Points		    [70, 0]
+		    Branch {
+		    DstBlock		    "If"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 160]
+		    DstBlock		    "Compute Distance"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Reshape2"
+		    SrcPort		    1
+		    Points		    [100, 0]
+		    Branch {
+		    Points		    [0, 230]
+		    DstBlock		    "Compute Distance"
+		    DstPort		    5
+		    }
+		    Branch {
+		    Points		    [60, 0]
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Vertex"
+		    SrcPort		    1
+		    DstBlock		    "Reshape2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Edge1|Edge2|Position-Vertex"
+		    SrcPort		    1
+		    DstBlock		    "Determinant Dt of\nEdge1|Edge2|Position-Vertex"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "Edge1|Edge2|Position-Vertex"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Position"
+		    SrcPort		    1
+		    Points		    [414, 0]
+		    Branch {
+		    DstBlock		    "Compute Distance"
+		    DstPort		    3
+		    }
+		    Branch {
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Gain"
+		    SrcPort		    1
+		    Points		    [45, 0; 0, -65]
+		    DstBlock		    "Edge1|Edge2|Direction"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Direction"
+		    SrcPort		    1
+		    Points		    [125, 0]
+		    Branch {
+		    Points		    [0, 155]
+		    DstBlock		    "Compute Distance"
+		    DstPort		    4
+		    }
+		    Branch {
+		    DstBlock		    "Gain"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Reshape1"
+		    SrcPort		    1
+		    Points		    [75, 0]
+		    Branch {
+		    Points		    [0, 310]
+		    DstBlock		    "Compute Distance"
+		    DstPort		    6
+		    }
+		    Branch {
+		    Points		    [115, 0]
+		    Branch {
+		    Points		    [0, 155]
+		    DstBlock		    "Edge1|Edge2|Position-Vertex"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [45, 0; 0, 25]
+		    DstBlock		    "Edge1|Edge2|Direction"
+		    DstPort		    2
+		    }
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Reshape"
+		    SrcPort		    1
+		    Points		    [50, 0]
+		    Branch {
+		    Points		    [0, 390]
+		    DstBlock		    "Compute Distance"
+		    DstPort		    7
+		    }
+		    Branch {
+		    Points		    [155, 0]
+		    Branch {
+		    Points		    [0, 195]
+		    DstBlock		    "Edge1|Edge2|Position-Vertex"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [40, 0; 0, 65]
+		    DstBlock		    "Edge1|Edge2|Direction"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Edge 2"
+		    SrcPort		    1
+		    DstBlock		    "Reshape1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Edge 1"
+		    SrcPort		    1
+		    DstBlock		    "Reshape"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Edge1|Edge2|Direction"
+		    SrcPort		    1
+		    DstBlock		    "Determinant D of \nEdge1|Edge2|-Direction"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Wall"
+		    SrcPort		    1
+		    Points		    [95, 0]
+		    Branch {
+		    Points		    [0, 55]
+		    Branch {
+		    Points		    [0, 55]
+		    DstBlock		    "Vertex"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Edge 2"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    DstBlock		    "Edge 1"
+		    DstPort		    1
+		    }
+		    }
+		    Annotation {
+		    Position		    [1285, 336]
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    ForEach
+		    Name		    "For Each Wall"
+		    SID			    1321
+		    Ports		    []
+		    Position		    [35, 25, 89, 56]
+		    DisableCoverage	    on
+		    IndexMode		    "One-based"
+		    StateHandling	    "Separate states for each iteration"
+		    }
+		    Block {
+		    BlockType		    If
+		    Name		    "If wall consists of zeros\ndo not calculate distances"
+		    SID			    1322
+		    Ports		    [1, 2]
+		    Position		    [385, 226, 485, 264]
+		    IfExpression	    "u1 == 0"
+		    }
+		    Block {
+		    BlockType		    Merge
+		    Name		    "Merge"
+		    SID			    1323
+		    Ports		    [2, 1]
+		    Position		    [755, 300, 795, 340]
+		    InitialOutput	    "0"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Return zeros as Distances"
+		    SID			    1324
+		    Ports		    [0, 1, 0, 0, 0, 0, 0, 1]
+		    Position		    [600, 264, 685, 316]
+		    LibraryVersion	    "1.216"
+		    TreatAsAtomicUnit	    on
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    System {
+		    Name		    "Return zeros as Distances"
+		    Location		    [646, 276, 1144, 576]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "A4"
+		    PaperUnits		    "centimeters"
+		    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    ActionPort
+		    Name		    "Action Port"
+		    SID			    1325
+		    Position		    [170, 15, 229, 43]
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    1326
+		    Position		    [115, 70, 145, 100]
+		    Value		    "0"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Distance 0"
+		    SID			    1327
+		    Position		    [290, 78, 320, 92]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    DstBlock		    "Distance 0"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum Vector\nElements"
+		    SID			    1328
+		    Ports		    [1, 1]
+		    Position		    [295, 230, 325, 260]
+		    Inputs		    "+"
+		    InputSameDT		    off
+		    OutDataTypeMode	    "Inherit via internal rule"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^-10"
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Distances"
+		    SID			    1329
+		    Position		    [860, 313, 890, 327]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    ConcatenationDimension  "1"
+		    }
+		    Line {
+		    SrcBlock		    "If wall consists of zeros\ndo not calculate distances"
+		    SrcPort		    2
+		    Points		    [70, 0]
+		    DstBlock		    "Compute Distance to single Wall"
+		    DstPort		    ifaction
+		    }
+		    Line {
+		    SrcBlock		    "Compute Distance to single Wall"
+		    SrcPort		    1
+		    Points		    [65, 0; 0, -100]
+		    DstBlock		    "Merge"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Sum Vector\nElements"
+		    SrcPort		    1
+		    DstBlock		    "If wall consists of zeros\ndo not calculate distances"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Merge"
+		    SrcPort		    1
+		    DstBlock		    "Distances"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Return zeros as Distances"
+		    SrcPort		    1
+		    Points		    [35, 0; 0, 20]
+		    DstBlock		    "Merge"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Position"
+		    SrcPort		    1
+		    DstBlock		    "Compute Distance to single Wall"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Direction"
+		    SrcPort		    1
+		    DstBlock		    "Compute Distance to single Wall"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Walls"
+		    SrcPort		    1
+		    Points		    [60, 0]
+		    Branch {
+		    Points		    [0, 220]
+		    DstBlock		    "Compute Distance to single Wall"
+		    DstPort		    3
+		    }
+		    Branch {
+		    DstBlock		    "Abs"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "If wall consists of zeros\ndo not calculate distances"
+		    SrcPort		    1
+		    Points		    [150, 0]
+		    DstBlock		    "Return zeros as Distances"
+		    DstPort		    ifaction
+		    }
+		    Line {
+		    SrcBlock		    "Abs"
+		    SrcPort		    1
+		    DstBlock		    "Sum Vector\nElements"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Pick smalles distance\n> 0"
+		  SID			  1330
+		  Ports			  [1, 1]
+		  Position		  [575, 202, 645, 248]
+		  ForegroundColor	  "blue"
+		  LibraryVersion	  "1.31"
+		  PermitHierarchicalResolution "ExplicitOnly"
+		  TreatAsAtomicUnit	  on
+		  MinAlgLoopOccurrences	  off
+		  PropExecContextOutsideSubsystem off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  Opaque		  off
+		  RequestExecContextInheritance	off
+		  MaskHideContents	  off
+		  MaskType		  "Stateflow"
+		  MaskDescription	  "Embedded MATLAB block"
+		  MaskDisplay		  "disp('fcn');"
+		  MaskSelfModifiable	  on
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  off
+		  MaskIconRotate	  "none"
+		  MaskPortRotate	  "default"
+		  MaskIconUnits		  "autoscale"
+		  System {
+		    Name		    "Pick smalles distance\n> 0"
+		    Location		    [257, 457, 812, 717]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "A4"
+		    PaperUnits		    "centimeters"
+		    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    SIDHighWatermark	    77
+		    Block {
+		    BlockType		    Inport
+		    Name		    "u"
+		    SID			    1
+		    Position		    [20, 101, 40, 119]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Demux
+		    Name		    " Demux "
+		    SID			    75
+		    Ports		    [1, 1]
+		    Position		    [270, 160, 320, 200]
+		    Outputs		    "1"
+		    }
+		    Block {
+		    BlockType		    "S-Function"
+		    Name		    " SFunction "
+		    SID			    74
+		    Tag			    "Stateflow S-Function laser_library 3"
+		    Ports		    [1, 2]
+		    Position		    [180, 100, 230, 160]
+		    FunctionName	    "sf_sfun"
+		    PortCounts		    "[1 2]"
+		    EnableBusSupport	    off
+		    Port {
+		    PortNumber		    2
+		    Name		    "y"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Terminator
+		    Name		    " Terminator "
+		    SID			    77
+		    Position		    [460, 171, 480, 189]
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "y"
+		    SID			    5
+		    Position		    [460, 101, 480, 119]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "sfix(16)"
+		    OutScaling		    "2^0"
+		    }
+		    Line {
+		    SrcBlock		    " SFunction "
+		    SrcPort		    1
+		    DstBlock		    " Demux "
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "u"
+		    SrcPort		    1
+		    DstBlock		    " SFunction "
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "y"
+		    Labels		    [0, 0]
+		    SrcBlock		    " SFunction "
+		    SrcPort		    2
+		    DstBlock		    "y"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    " Demux "
+		    SrcPort		    1
+		    DstBlock		    " Terminator "
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Scope
+		  Name			  "Scope"
+		  SID			  1331
+		  Ports			  [1]
+		  Position		  [220, 314, 250, 346]
+		  Floating		  off
+		  Location		  [418, 178, 1584, 696]
+		  Open			  off
+		  NumInputPorts		  "1"
+		  List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		  }
+		  YMin			  "0"
+		  YMax			  "1"
+		  SaveName		  "ScopeData4"
+		  DataFormat		  "StructureWithTime"
+		  SampleTime		  "0"
+		}
+		Block {
+		  BlockType		  Scope
+		  Name			  "Scope1"
+		  SID			  1332
+		  Ports			  [1]
+		  Position		  [750, 314, 780, 346]
+		  Floating		  off
+		  Location		  [189, 734, 1361, 1149]
+		  Open			  off
+		  NumInputPorts		  "1"
+		  List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		  }
+		  YMin			  "0"
+		  YMax			  "130"
+		  SaveName		  "ScopeData3"
+		  DataFormat		  "StructureWithTime"
+		  SampleTime		  "0"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Distance"
+		  SID			  1333
+		  Position		  [710, 218, 740, 232]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "fixdt(1, 16)"
+		  OutScaling		  "2^0"
+		}
+		Line {
+		  SrcBlock		  "Pick smalles distance\n> 0"
+		  SrcPort		  1
+		  Points		  [35, 0]
+		  Branch {
+		    DstBlock		    "Distance"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 105]
+		    DstBlock		    "Scope1"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Compute distances to\nall walls"
+		  SrcPort		  1
+		  DstBlock		  "Pick smalles distance\n> 0"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Position"
+		  SrcPort		  1
+		  Points		  [35, 0]
+		  Branch {
+		    Points		    [0, 130]
+		    DstBlock		    "Scope"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Compute distances to\nall walls"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Direction"
+		  SrcPort		  1
+		  DstBlock		  "Compute distances to\nall walls"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Walls"
+		  SrcPort		  1
+		  DstBlock		  "Compute distances to\nall walls"
+		  DstPort		  3
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Enter new distance to\nDistnaces Vector"
+	      SID		      1334
+	      Ports		      [3, 1]
+	      Position		      [1305, 201, 1525, 279]
+	      LibraryVersion	      "1.216"
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      System {
+		Name			"Enter new distance to\nDistnaces Vector"
+		Location		[107, 168, 1485, 897]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "Distance"
+		  SID			  1335
+		  Position		  [110, 183, 140, 197]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "fixdt(1, 16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Step"
+		  SID			  1336
+		  Position		  [110, 213, 140, 227]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  OutDataType		  "fixdt(1, 16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "MaxStep"
+		  SID			  1337
+		  Position		  [110, 243, 140, 257]
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		  OutDataType		  "fixdt(1, 16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Assignment
+		  Name			  "Assignment"
+		  SID			  1338
+		  Ports			  [3, 1]
+		  Position		  [675, 173, 745, 207]
+		  IndexOptions		  "Index vector (port)"
+		  Indices		  "1"
+		  OutputSizes		  "1"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Decrement\nReal World"
+		  SID			  1339
+		  Ports			  [1, 1]
+		  Position		  [735, 295, 765, 325]
+		  LibraryVersion	  "1.216"
+		  SourceBlock		  "simulink/Additional Math\n& Discrete/Additional Math:\nIncrement - Decrement/Decrement\nReal World"
+		  SourceType		  "Real World Value Decrement"
+		  ShowPortLabels	  "FromPortIcon"
+		  SystemSampleTime	  "-1"
+		  FunctionWithSeparateData "off"
+		  RTWMemSecFuncInitTerm	  "Inherit from model"
+		  RTWMemSecFuncExecute	  "Inherit from model"
+		  RTWMemSecDataConstants  "Inherit from model"
+		  RTWMemSecDataInternal	  "Inherit from model"
+		  RTWMemSecDataParameters "Inherit from model"
+		}
+		Block {
+		  BlockType		  If
+		  Name			  "If"
+		  SID			  1340
+		  Ports			  [2, 2]
+		  Position		  [830, 281, 930, 319]
+		  NumInputs		  "2"
+		  IfExpression		  "u1 == u2"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Increment\nReal World"
+		  SID			  1341
+		  Ports			  [1, 1]
+		  Position		  [565, 205, 595, 235]
+		  LibraryVersion	  "1.216"
+		  SourceBlock		  "simulink/Additional Math\n& Discrete/Additional Math:\nIncrement - Decrement/Increment\nReal World"
+		  SourceType		  "Real World Value Increment"
+		  ShowPortLabels	  "FromPortIcon"
+		  SystemSampleTime	  "-1"
+		  FunctionWithSeparateData "off"
+		  RTWMemSecFuncInitTerm	  "Inherit from model"
+		  RTWMemSecFuncExecute	  "Inherit from model"
+		  RTWMemSecDataConstants  "Inherit from model"
+		  RTWMemSecDataInternal	  "Inherit from model"
+		  RTWMemSecDataParameters "Inherit from model"
+		}
+		Block {
+		  BlockType		  Merge
+		  Name			  "Merge"
+		  SID			  1342
+		  Ports			  [2, 1]
+		  Position		  [1050, 245, 1090, 285]
+		  BlockRotation		  270
+		  BlockMirror		  on
+		  InitialOutput		  "0"
+		}
+		Block {
+		  BlockType		  Memory
+		  Name			  "New vector to be filled"
+		  SID			  1343
+		  Position		  [480, 85, 510, 115]
+		  X0			  "[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0]"
+		  InheritSampleTime	  on
+		}
+		Block {
+		  BlockType		  Memory
+		  Name			  "Old Vector, from \nlast complete \nmeasurement"
+		  SID			  1344
+		  Position		  [1055, 325, 1085, 355]
+		  BlockRotation		  270
+		  BlockMirror		  on
+		  X0			  "[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+		  " 0 0 0]"
+		  InheritSampleTime	  on
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Return new vector"
+		  SID			  1345
+		  Ports			  [1, 1, 0, 0, 0, 0, 0, 1]
+		  Position		  [960, 172, 1030, 208]
+		  NamePlacement		  "alternate"
+		  LibraryVersion	  "1.216"
+		  TreatAsAtomicUnit	  on
+		  MinAlgLoopOccurrences	  off
+		  PropExecContextOutsideSubsystem off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  Opaque		  off
+		  RequestExecContextInheritance	off
+		  MaskHideContents	  off
+		  System {
+		    Name		    "Return new vector"
+		    Location		    [1, 79, 700, 551]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "A4"
+		    PaperUnits		    "centimeters"
+		    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    SID			    1346
+		    Position		    [75, 78, 105, 92]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    ActionPort
+		    Name		    "Action Port"
+		    SID			    1347
+		    Position		    [170, 15, 229, 43]
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    SID			    1348
+		    Position		    [325, 78, 355, 92]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Return old vector"
+		  SID			  1349
+		  Ports			  [1, 1, 0, 0, 0, 0, 0, 1]
+		  Position		  [960, 407, 1030, 443]
+		  LibraryVersion	  "1.216"
+		  TreatAsAtomicUnit	  on
+		  MinAlgLoopOccurrences	  off
+		  PropExecContextOutsideSubsystem off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  Opaque		  off
+		  RequestExecContextInheritance	off
+		  MaskHideContents	  off
+		  System {
+		    Name		    "Return old vector"
+		    Location		    [342, 471, 840, 771]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "A4"
+		    PaperUnits		    "centimeters"
+		    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    SID			    1350
+		    Position		    [75, 78, 105, 92]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    ActionPort
+		    Name		    "Action Port"
+		    SID			    1351
+		    Position		    [170, 15, 229, 43]
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    SID			    1352
+		    Position		    [325, 78, 355, 92]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Scann Result\n(Distance Vector)"
+		  SID			  1353
+		  Position		  [1275, 293, 1305, 307]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "fixdt(1, 16)"
+		  OutScaling		  "2^0"
+		}
+		Line {
+		  SrcBlock		  "Decrement\nReal World"
+		  SrcPort		  1
+		  DstBlock		  "If"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Return old vector"
+		  SrcPort		  1
+		  Points		  [150, 0; 0, -235; -105, 0]
+		  DstBlock		  "Merge"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Merge"
+		  SrcPort		  1
+		  Points		  [0, 10]
+		  Branch {
+		    DstBlock		    "Scann Result\n(Distance Vector)"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Old Vector, from \nlast complete \nmeasurement"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Return new vector"
+		  SrcPort		  1
+		  Points		  [25, 0]
+		  DstBlock		  "Merge"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Distance"
+		  SrcPort		  1
+		  DstBlock		  "Assignment"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Old Vector, from \nlast complete \nmeasurement"
+		  SrcPort		  1
+		  Points		  [0, 20; -145, 0; 0, 45]
+		  DstBlock		  "Return old vector"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "If"
+		  SrcPort		  2
+		  Points		  [60, 0]
+		  DstBlock		  "Return old vector"
+		  DstPort		  ifaction
+		}
+		Line {
+		  SrcBlock		  "If"
+		  SrcPort		  1
+		  Points		  [60, 0]
+		  DstBlock		  "Return new vector"
+		  DstPort		  ifaction
+		}
+		Line {
+		  SrcBlock		  "MaxStep"
+		  SrcPort		  1
+		  Points		  [345, 0; 0, 60]
+		  DstBlock		  "Decrement\nReal World"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Assignment"
+		  SrcPort		  1
+		  Points		  [80, 0]
+		  Branch {
+		    Points		    [0, -150; -385, 0; 0, 60]
+		    DstBlock		    "New vector to be filled"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Return new vector"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Step"
+		  SrcPort		  1
+		  Points		  [365, 0]
+		  Branch {
+		    Points		    [0, 70]
+		    DstBlock		    "If"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Increment\nReal World"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "New vector to be filled"
+		  SrcPort		  1
+		  Points		  [120, 0; 0, 80]
+		  DstBlock		  "Assignment"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Increment\nReal World"
+		  SrcPort		  1
+		  Points		  [35, 0; 0, -20]
+		  DstBlock		  "Assignment"
+		  DstPort		  3
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Generate Measurement Beam"
+	      SID		      1354
+	      Ports		      [5, 1]
+	      Position		      [455, 171, 695, 309]
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      System {
+		Name			"Generate Measurement Beam"
+		Location		[193, 79, 1620, 1021]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "UAV Rotations"
+		  SID			  1355
+		  Position		  [25, 303, 55, 317]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Sensor Direction"
+		  SID			  1356
+		  Position		  [30, 363, 60, 377]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Angular\nReolution"
+		  SID			  1357
+		  Position		  [1000, 233, 1030, 247]
+		  BlockMirror		  on
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Step"
+		  SID			  1358
+		  Position		  [1000, 198, 1030, 212]
+		  BlockMirror		  on
+		  Port			  "4"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "NumSteps"
+		  SID			  1359
+		  Position		  [1000, 163, 1030, 177]
+		  BlockMirror		  on
+		  Port			  "5"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Compute Rotation Angle"
+		  SID			  1360
+		  Ports			  [3, 1]
+		  Position		  [710, 155, 845, 255]
+		  BlockMirror		  on
+		  MinAlgLoopOccurrences	  off
+		  PropExecContextOutsideSubsystem off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  Opaque		  off
+		  RequestExecContextInheritance	off
+		  MaskHideContents	  off
+		  System {
+		    Name		    "Compute Rotation Angle"
+		    Location		    [544, 130, 1438, 454]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "A4"
+		    PaperUnits		    "centimeters"
+		    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "NumSteps"
+		    SID			    1361
+		    Position		    [690, 93, 720, 107]
+		    BlockMirror		    on
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Step"
+		    SID			    1362
+		    Position		    [690, 33, 720, 47]
+		    BlockMirror		    on
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Angular\nResolution"
+		    SID			    1363
+		    Position		    [270, 158, 300, 172]
+		    BlockMirror		    on
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant1"
+		    SID			    1364
+		    Position		    [575, 185, 605, 215]
+		    BlockMirror		    on
+		    Value		    "2"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Divide"
+		    SID			    1365
+		    Ports		    [2, 1]
+		    Position		    [450, 92, 480, 123]
+		    BlockMirror		    on
+		    Inputs		    "*/"
+		    InputSameDT		    off
+		    OutDataTypeMode	    "Inherit via internal rule"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^-10"
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    RndMeth		    "Floor"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Mult"
+		    SID			    1366
+		    Ports		    [2, 1]
+		    Position		    [145, 97, 175, 128]
+		    BlockMirror		    on
+		    InputSameDT		    off
+		    OutDataTypeMode	    "Inherit via internal rule"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Subtract"
+		    SID			    1367
+		    Ports		    [2, 1]
+		    Position		    [270, 87, 300, 118]
+		    BlockMirror		    on
+		    Inputs		    "+-"
+		    InputSameDT		    off
+		    OutDataTypeMode	    "Inherit via internal rule"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^-10"
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Angle"
+		    SID			    1368
+		    Position		    [15, 108, 45, 122]
+		    BlockMirror		    on
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    }
+		    Line {
+		    SrcBlock		    "Angular\nResolution"
+		    SrcPort		    1
+		    Points		    [-35, 0; 0, -45]
+		    DstBlock		    "Mult"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Subtract"
+		    SrcPort		    1
+		    DstBlock		    "Mult"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Divide"
+		    SrcPort		    1
+		    DstBlock		    "Subtract"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant1"
+		    SrcPort		    1
+		    Points		    [-25, 0; 0, -85]
+		    DstBlock		    "Divide"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Step"
+		    SrcPort		    1
+		    Points		    [-310, 0; 0, 55]
+		    DstBlock		    "Subtract"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "NumSteps"
+		    SrcPort		    1
+		    DstBlock		    "Divide"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Mult"
+		    SrcPort		    1
+		    DstBlock		    "Angle"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant"
+		  SID			  1369
+		  Position		  [604, 25, 676, 105]
+		  BlockRotation		  270
+		  BlockMirror		  on
+		  NamePlacement		  "alternate"
+		  Value			  "[0 0]"
+		  OutDataType		  "fixdt(1, 16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  SID			  1370
+		  Position		  [65, 455, 95, 485]
+		  Value			  "180/pi"
+		  OutDataType		  "fixdt(1, 16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Demux
+		  Name			  "Demux"
+		  SID			  1371
+		  Ports			  [1, 3]
+		  Position		  [1025, 465, 1040, 685]
+		  ShowName		  off
+		  Outputs		  "3"
+		  DisplayOption		  "bar"
+		}
+		Block {
+		  BlockType		  Demux
+		  Name			  "Demux1"
+		  SID			  1372
+		  Ports			  [1, 3]
+		  Position		  [110, 291, 115, 329]
+		  ShowName		  off
+		  Outputs		  "3"
+		  DisplayOption		  "bar"
+		}
+		Block {
+		  BlockType		  Mux
+		  Name			  "Mux"
+		  SID			  1373
+		  Ports			  [3, 1]
+		  Position		  [205, 291, 210, 329]
+		  ShowName		  off
+		  Inputs		  "3"
+		  DisplayOption		  "bar"
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product"
+		  SID			  1374
+		  Ports			  [2, 1]
+		  Position		  [440, 447, 470, 478]
+		  InputSameDT		  off
+		  OutDataTypeMode	  "Inherit via internal rule"
+		  OutDataType		  "fixdt(1, 16)"
+		  OutScaling		  "2^0"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Quaternion\nRotation"
+		  SID			  1375
+		  Ports			  [2, 1]
+		  Position		  [885, 338, 940, 382]
+		  LibraryVersion	  "1.95"
+		  SourceBlock		  "aerolibutil/Quaternion\nRotation"
+		  SourceType		  "Quaternion Rotation"
+		  ShowPortLabels	  "FromPortIcon"
+		  SystemSampleTime	  "-1"
+		  FunctionWithSeparateData "off"
+		  RTWMemSecFuncInitTerm	  "Inherit from model"
+		  RTWMemSecFuncExecute	  "Inherit from model"
+		  RTWMemSecDataConstants  "Inherit from model"
+		  RTWMemSecDataInternal	  "Inherit from model"
+		  RTWMemSecDataParameters "Inherit from model"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Rotation Angles to Quaternions"
+		  SID			  1376
+		  Ports			  [1, 1]
+		  Position		  [450, 289, 550, 331]
+		  AttributesFormatString  "Rotation Order: %<rotationOrder>"
+		  LibraryVersion	  "1.265"
+		  SourceBlock		  "aerolibtransform2/Rotation Angles to Quaternions"
+		  SourceType		  "Ang2Quat"
+		  ShowPortLabels	  "FromPortIcon"
+		  SystemSampleTime	  "-1"
+		  FunctionWithSeparateData "off"
+		  RTWMemSecFuncInitTerm	  "Inherit from model"
+		  RTWMemSecFuncExecute	  "Inherit from model"
+		  RTWMemSecDataConstants  "Inherit from model"
+		  RTWMemSecDataInternal	  "Inherit from model"
+		  RTWMemSecDataParameters "Inherit from model"
+		  rotationOrder		  "YZX"
+		}
+		Block {
+		  BlockType		  Concatenate
+		  Name			  "Rotation cycle is Y->Z->X\ny (vertical ax. in sim!) is first element"
+		  SID			  1377
+		  Ports			  [2, 1]
+		  Position		  [545, 196, 550, 234]
+		  BlockMirror		  on
+		  Mode			  "Vector"
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum"
+		  SID			  1378
+		  Ports			  [2, 1]
+		  Position		  [355, 300, 375, 320]
+		  ShowName		  off
+		  IconShape		  "round"
+		  Inputs		  "++|"
+		  InputSameDT		  off
+		  OutDataTypeMode	  "Inherit via internal rule"
+		  OutDataType		  "fixdt(1, 16)"
+		  OutScaling		  "2^0"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Scope
+		  Name			  "angle"
+		  SID			  1379
+		  Ports			  [1]
+		  Position		  [570, 484, 600, 516]
+		  Floating		  off
+		  Location		  [192, 345, 1354, 674]
+		  Open			  off
+		  NumInputPorts		  "1"
+		  List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		  }
+		  YMin			  "0"
+		  YMax			  "700"
+		  SaveName		  "ScopeData5"
+		  DataFormat		  "StructureWithTime"
+		  SampleTime		  "0"
+		}
+		Block {
+		  BlockType		  Scope
+		  Name			  "step"
+		  SID			  1380
+		  Ports			  [1]
+		  Position		  [1070, 404, 1100, 436]
+		  Floating		  off
+		  Location		  [193, 79, 1355, 443]
+		  Open			  off
+		  NumInputPorts		  "1"
+		  List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		  }
+		  YMin			  "0"
+		  YMax			  "700"
+		  SaveName		  "ScopeData1"
+		  DataFormat		  "StructureWithTime"
+		  SampleTime		  "0"
+		}
+		Block {
+		  BlockType		  Scope
+		  Name			  "x"
+		  SID			  1381
+		  Ports			  [1]
+		  Position		  [1070, 484, 1100, 516]
+		  Floating		  off
+		  Location		  [193, 79, 1362, 365]
+		  Open			  off
+		  NumInputPorts		  "1"
+		  List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		  }
+		  YMin			  "-2.5"
+		  YMax			  "2.5"
+		  SaveName		  "ScopeData2"
+		  DataFormat		  "StructureWithTime"
+		  SampleTime		  "0"
+		}
+		Block {
+		  BlockType		  Scope
+		  Name			  "y"
+		  SID			  1382
+		  Ports			  [1]
+		  Position		  [1070, 559, 1100, 591]
+		  Floating		  off
+		  Location		  [197, 422, 1349, 771]
+		  Open			  off
+		  NumInputPorts		  "1"
+		  List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		  }
+		  YMin			  "-1"
+		  YMax			  "1"
+		  SaveName		  "ScopeData4"
+		  DataFormat		  "StructureWithTime"
+		  SampleTime		  "0"
+		}
+		Block {
+		  BlockType		  Scope
+		  Name			  "z"
+		  SID			  1383
+		  Ports			  [1]
+		  Position		  [1070, 634, 1100, 666]
+		  Floating		  off
+		  Location		  [186, 851, 1349, 1161]
+		  Open			  off
+		  NumInputPorts		  "1"
+		  List {
+		    ListType		    AxesTitles
+		    axes1		    "%<SignalLabel>"
+		  }
+		  YMin			  "-1"
+		  YMax			  "1"
+		  SaveName		  "ScopeData3"
+		  DataFormat		  "StructureWithTime"
+		  SampleTime		  "0"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Measurement\nBeam"
+		  SID			  1384
+		  Position		  [990, 353, 1020, 367]
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  SrcBlock		  "NumSteps"
+		  SrcPort		  1
+		  DstBlock		  "Compute Rotation Angle"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Step"
+		  SrcPort		  1
+		  Points		  [-50, 0]
+		  Branch {
+		    DstBlock		    "Compute Rotation Angle"
+		    DstPort		    2
+		  }
+		  Branch {
+		    Points		    [0, 215]
+		    DstBlock		    "step"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Angular\nReolution"
+		  SrcPort		  1
+		  DstBlock		  "Compute Rotation Angle"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Sensor Direction"
+		  SrcPort		  1
+		  DstBlock		  "Quaternion\nRotation"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Sum"
+		  SrcPort		  1
+		  DstBlock		  "Rotation Angles to Quaternions"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Rotation Angles to Quaternions"
+		  SrcPort		  1
+		  Points		  [155, 0; 0, 40]
+		  DstBlock		  "Quaternion\nRotation"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Rotation cycle is Y->Z->X\ny (vertical ax. in sim!) is first element"
+		  SrcPort		  1
+		  Points		  [-175, 0]
+		  DstBlock		  "Sum"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Demux"
+		  SrcPort		  1
+		  DstBlock		  "x"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Demux"
+		  SrcPort		  2
+		  DstBlock		  "y"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Demux"
+		  SrcPort		  3
+		  DstBlock		  "z"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Quaternion\nRotation"
+		  SrcPort		  1
+		  Points		  [5, 0]
+		  Branch {
+		    DstBlock		    "Measurement\nBeam"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 220]
+		    DstBlock		    "Demux"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Compute Rotation Angle"
+		  SrcPort		  1
+		  Points		  [-110, 0]
+		  Branch {
+		    DstBlock		    "Rotation cycle is Y->Z->X\ny (vertical ax. in sim!) is first element"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 215; -170, 0]
+		    DstBlock		    "Product"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Constant"
+		  SrcPort		  1
+		  Points		  [0, 115]
+		  DstBlock		  "Rotation cycle is Y->Z->X\ny (vertical ax. in sim!) is first element"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  DstBlock		  "Product"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Product"
+		  SrcPort		  1
+		  Points		  [40, 0; 0, 35]
+		  DstBlock		  "angle"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "UAV Rotations"
+		  SrcPort		  1
+		  DstBlock		  "Demux1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Demux1"
+		  SrcPort		  1
+		  Points		  [35, 0; 0, 20]
+		  DstBlock		  "Mux"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Demux1"
+		  SrcPort		  2
+		  Points		  [45, 0; 0, -10]
+		  DstBlock		  "Mux"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Demux1"
+		  SrcPort		  3
+		  Points		  [25, 0; 0, -10]
+		  DstBlock		  "Mux"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Mux"
+		  SrcPort		  1
+		  DstBlock		  "Sum"
+		  DstPort		  2
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Ignore too distant\nwalls"
+	      SID		      1426
+	      Ports		      [3, 1]
+	      Position		      [615, 591, 715, 659]
+	      LibraryVersion	      "1.59"
+	      SourceBlock	      "falter_library/Ignore too distant\nwalls"
+	      SourceType	      "SubSystem"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Limit Range"
+	      SID		      1386
+	      Ports		      [2, 1]
+	      Position		      [1045, 201, 1190, 274]
+	      LibraryVersion	      "1.216"
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      System {
+		Name			"Limit Range"
+		Location		[433, 403, 1294, 783]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "Distance"
+		  SID			  1387
+		  Position		  [110, 108, 140, 122]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "fixdt(1, 16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Range"
+		  SID			  1388
+		  Position		  [110, 143, 140, 157]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  OutDataType		  "fixdt(1, 16)"
+		  OutScaling		  "2^0"
+		}
+		Block {
+		  BlockType		  If
+		  Name			  "If"
+		  SID			  1389
+		  Ports			  [2, 2]
+		  Position		  [200, 99, 305, 166]
+		  NumInputs		  "2"
+		  IfExpression		  "u1 <= u2 "
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "If Action\nSubsystem"
+		  SID			  1390
+		  Ports			  [1, 1, 0, 0, 0, 0, 0, 1]
+		  Position		  [295, 32, 365, 68]
+		  NamePlacement		  "alternate"
+		  LibraryVersion	  "1.216"
+		  TreatAsAtomicUnit	  on
+		  MinAlgLoopOccurrences	  off
+		  PropExecContextOutsideSubsystem off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  Opaque		  off
+		  RequestExecContextInheritance	off
+		  MaskHideContents	  off
+		  System {
+		    Name		    "If Action\nSubsystem"
+		    Location		    [342, 471, 840, 771]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "A4"
+		    PaperUnits		    "centimeters"
+		    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In"
+		    SID			    1391
+		    Position		    [75, 78, 105, 92]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    ActionPort
+		    Name		    "Action Port"
+		    SID			    1392
+		    Position		    [170, 15, 229, 43]
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out"
+		    SID			    1393
+		    Position		    [325, 78, 355, 92]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "In"
+		    SrcPort		    1
+		    DstBlock		    "Out"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "If Action\nSubsystem1"
+		  SID			  1394
+		  Ports			  [0, 1, 0, 0, 0, 0, 0, 1]
+		  Position		  [295, 197, 365, 233]
+		  LibraryVersion	  "1.216"
+		  TreatAsAtomicUnit	  on
+		  MinAlgLoopOccurrences	  off
+		  PropExecContextOutsideSubsystem off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  Opaque		  off
+		  RequestExecContextInheritance	off
+		  MaskHideContents	  off
+		  System {
+		    Name		    "If Action\nSubsystem1"
+		    Location		    [342, 471, 840, 771]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "A4"
+		    PaperUnits		    "centimeters"
+		    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    ActionPort
+		    Name		    "Action Port"
+		    SID			    1395
+		    Position		    [170, 15, 229, 43]
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    1396
+		    Position		    [75, 70, 105, 100]
+		    Value		    "0"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Distance=0"
+		    SID			    1397
+		    Position		    [325, 78, 355, 92]
+		    IconDisplay		    "Port number"
+		    OutDataType		    "fixdt(1, 16)"
+		    OutScaling		    "2^0"
+		    InitialOutput	    "0"
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    DstBlock		    "Distance=0"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Merge
+		  Name			  "Merge"
+		  SID			  1398
+		  Ports			  [2, 1]
+		  Position		  [445, 110, 485, 150]
+		  InitialOutput		  "0"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Measured\nDistance"
+		  SID			  1399
+		  Position		  [535, 123, 565, 137]
+		  IconDisplay		  "Port number"
+		  OutDataType		  "fixdt(1, 16)"
+		  OutScaling		  "2^0"
+		}
+		Line {
+		  SrcBlock		  "Merge"
+		  SrcPort		  1
+		  DstBlock		  "Measured\nDistance"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "If Action\nSubsystem1"
+		  SrcPort		  1
+		  Points		  [45, 0; 0, -75]
+		  DstBlock		  "Merge"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "If Action\nSubsystem"
+		  SrcPort		  1
+		  Points		  [45, 0; 0, 70]
+		  DstBlock		  "Merge"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "If"
+		  SrcPort		  2
+		  Points		  [20, 0]
+		  DstBlock		  "If Action\nSubsystem1"
+		  DstPort		  ifaction
+		}
+		Line {
+		  SrcBlock		  "If"
+		  SrcPort		  1
+		  Points		  [20, 0]
+		  DstBlock		  "If Action\nSubsystem"
+		  DstPort		  ifaction
+		}
+		Line {
+		  SrcBlock		  "Range"
+		  SrcPort		  1
+		  DstBlock		  "If"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Distance"
+		  SrcPort		  1
+		  Points		  [20, 0]
+		  Branch {
+		    Points		    [0, -65]
+		    DstBlock		    "If Action\nSubsystem"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "If"
+		    DstPort		    1
+		  }
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Rotate relative \nPosition"
+	      SID		      1400
+	      Ports		      [2, 1]
+	      Position		      [260, 397, 290, 428]
+	      Multiplication	      "Matrix(*)"
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      OutDataType	      "fixdt(1, 16)"
+	      OutScaling	      "2^0"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Selector
+	      Name		      "Sensor Direction"
+	      SID		      1401
+	      Ports		      [1, 1]
+	      Position		      [145, 286, 185, 324]
+	      NamePlacement	      "alternate"
+	      InputPortWidth	      "6"
+	      IndexOptions	      "Index vector (dialog)"
+	      Indices		      "[4 5 6]"
+	      OutputSizes	      "1"
+	    }
+	    Block {
+	      BlockType		      Selector
+	      Name		      "Sensor Position (relative)"
+	      SID		      1402
+	      Ports		      [1, 1]
+	      Position		      [145, 351, 185, 389]
+	      NamePlacement	      "alternate"
+	      InputPortWidth	      "6"
+	      IndexOptions	      "Index vector (dialog)"
+	      Indices		      "[1 2 3]"
+	      OutputSizes	      "1"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Scann Result\n(Distance Vector)"
+	      SID		      1403
+	      Position		      [1615, 233, 1645, 247]
+	      IconDisplay	      "Port number"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Walls"
+	      SrcPort		      1
+	      DstBlock		      "Ignore too distant\nwalls"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Ignore too distant\nwalls"
+	      SrcPort		      1
+	      Points		      [65, 0; 0, -360]
+	      DstBlock		      "Compute Distance"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Angular\nResolution"
+	      SrcPort		      1
+	      DstBlock		      "Generate Measurement Beam"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Enter new distance to\nDistnaces Vector"
+	      SrcPort		      1
+	      DstBlock		      "Scann Result\n(Distance Vector)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "UAV Rotations"
+	      SrcPort		      1
+	      DstBlock		      "Generate Measurement Beam"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Num Measruement\nSteps"
+	      SrcPort		      1
+	      Points		      [215, 0]
+	      Branch {
+		Points			[0, 150]
+		DstBlock		"Generate Measurement Beam"
+		DstPort			5
+	      }
+	      Branch {
+		Points			[965, 0; 0, 125]
+		DstBlock		"Enter new distance to\nDistnaces Vector"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Limit Range"
+	      SrcPort		      1
+	      Points		      [25, 0; 0, -25]
+	      DstBlock		      "Enter new distance to\nDistnaces Vector"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Compute Distance"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, -20]
+	      DstBlock		      "Limit Range"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Range"
+	      SrcPort		      1
+	      Points		      [420, 0]
+	      Branch {
+		Points			[525, 0; 0, -265]
+		DstBlock		"Limit Range"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 125]
+		DstBlock		"Ignore too distant\nwalls"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Step"
+	      SrcPort		      1
+	      Points		      [235, 0]
+	      Branch {
+		Points			[965, 0; 0, 135]
+		DstBlock		"Enter new distance to\nDistnaces Vector"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 160]
+		DstBlock		"Generate Measurement Beam"
+		DstPort			4
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Generate Measurement Beam"
+	      SrcPort		      1
+	      DstBlock		      "Compute Distance"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Add UAV Position"
+	      SrcPort		      1
+	      Points		      [340, 0; 0, -210]
+	      DstBlock		      "Compute Distance"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "UAV Position"
+	      SrcPort		      1
+	      Points		      [270, 0]
+	      Branch {
+		Points			[0, -40]
+		DstBlock		"Add UAV Position"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 135]
+		DstBlock		"Ignore too distant\nwalls"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Sensor Direction"
+	      SrcPort		      1
+	      Points		      [170, 0; 0, -90]
+	      DstBlock		      "Generate Measurement Beam"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sensor\nParameters"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      Branch {
+		Points			[0, -30]
+		DstBlock		"Sensor Direction"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 35]
+		DstBlock		"Sensor Position (relative)"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "DCM"
+	      SrcPort		      1
+	      DstBlock		      "Rotate relative \nPosition"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sensor Position (relative)"
+	      SrcPort		      1
+	      Points		      [30, 0; 0, 50]
+	      DstBlock		      "Rotate relative \nPosition"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Rotate relative \nPosition"
+	      SrcPort		      1
+	      DstBlock		      "Add UAV Position"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Range"
+	  SID			  1404
+	  Position		  [25, 505, 55, 535]
+	  Value			  "5"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Sensor Position (relative)\nSensor Direktion"
+	  SID			  1405
+	  Position		  [25, 413, 150, 467]
+	  Value			  "scannerParameters"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Scann Result\n(Distances)"
+	  SID			  1406
+	  Position		  [1320, 383, 1350, 397]
+	  IconDisplay		  "Port number"
+	  SampleTime		  "0.0001"
+	}
+	Line {
+	  SrcBlock		  "Sensor Position (relative)\nSensor Direktion"
+	  SrcPort		  1
+	  Points		  [160, 0; 0, -40]
+	  DstBlock		  "Perform Measurement Step"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "Walls"
+	  SrcPort		  1
+	  DstBlock		  "Perform Measurement Step"
+	  DstPort		  9
+	}
+	Line {
+	  SrcBlock		  "UAV Position"
+	  SrcPort		  1
+	  DstBlock		  "Perform Measurement Step"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "UAV DCM"
+	  SrcPort		  1
+	  DstBlock		  "Perform Measurement Step"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "UAV Rotations"
+	  SrcPort		  1
+	  DstBlock		  "Perform Measurement Step"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  DstBlock		  "Merge"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Memory"
+	  SrcPort		  1
+	  Points		  [0, -75]
+	  DstBlock		  "Hold output of previous\nsimulation step"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Merge"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "Scann Result\n(Distances)"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [30, 0; 0, -60; -355, 0]
+	    DstBlock		    "Memory"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Hold output of previous\nsimulation step"
+	  SrcPort		  1
+	  Points		  [45, 0; 0, 195]
+	  DstBlock		  "Merge"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "If current step is\na measurement step,\npermorme it."
+	  SrcPort		  2
+	  Points		  [615, 0]
+	  DstBlock		  "Hold output of previous\nsimulation step"
+	  DstPort		  ifaction
+	}
+	Line {
+	  SrcBlock		  "Perform Measurement Step"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "If current step is\na measurement step,\npermorme it."
+	  SrcPort		  1
+	  Points		  [230, 0]
+	  DstBlock		  "Perform Measurement Step"
+	  DstPort		  ifaction
+	}
+	Line {
+	  SrcBlock		  "Counter for \nrotation steps\n(Starts with 0)"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  Branch {
+	    Points		    [0, 155]
+	    DstBlock		    "Perform Measurement Step"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "If current step is\na measurement step,\npermorme it."
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "NumDistances"
+	  SrcPort		  1
+	  Points		  [260, 0]
+	  Branch {
+	    DstBlock		    "Perform Measurement Step"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -175]
+	    DstBlock		    "If current step is\na measurement step,\npermorme it."
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  Labels		  [0, 0]
+	  SrcBlock		  "Range"
+	  SrcPort		  1
+	  DstBlock		  "Perform Measurement Step"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "Angular Resolution"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [0, -275]
+	    DstBlock		    "Counter for \nrotation steps\n(Starts with 0)"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Perform Measurement Step"
+	    DstPort		    4
+	  }
+	}
+      }
+    }
+  }
+}
+# Finite State Machines
+#
+#    Stateflow Version 7.5 (R2010a) dated Jan 19 2010, 11:07:24
+#
+#
+
+
+Stateflow {
+  machine {
+    id			    1
+    name		    "laser_library"
+    created		    "28-Sep-2010 17:59:31"
+    isLibrary		    1
+    firstTarget		    9
+    sfVersion		    75014000
+  }
+  chart {
+    id			    2
+    name		    "Laser Scanner/Perform Measurement Step/Compute Distance/Pick smalles distance\n> 0"
+    windowPosition	    [566.906 47.25 200.25 189.75]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 1680 1050 1.25]
+    treeNode		    [0 3 0 0]
+    firstTransition	    5
+    firstJunction	    4
+    viewObj		    2
+    machine		    1
+    ssIdHighWaterMark	    5
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    6
+    chartFileNumber	    3
+    disableImplicitCasting  1
+    eml {
+      name		      "fcn"
+    }
+  }
+  state {
+    id			    3
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    2
+    treeNode		    [2 0 0 0]
+    superState		    SUBCHART
+    subviewer		    2
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function y = fcn(u)\n%#eml\n\n[len wid] = size(u);\n\ninf = 9999999;\n\nmin = inf;\n\nfor i=1:len"
+      ",\n    if ((u(i) > 0) & (min > u(i)))\n        min = u(i);\n    end\nend\n\nif (min == inf)\n    y = 0;\nelse\n "
+      "   y = min;\nend"
+      editorLayout	      "100 M4x1[341 314 945 656]"
+    }
+  }
+  junction {
+    id			    4
+    position		    [23.5747 49.5747 7]
+    chart		    2
+    linkNode		    [2 0 0]
+    subviewer		    2
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    5
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      4
+      intersection	      [7 0 -1 -1 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    2
+    linkNode		    [2 0 0]
+    dataLimits		    [23.575 23.575 14.625 34.575]
+    subviewer		    2
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  data {
+    id			    6
+    ssIdNumber		    4
+    name		    "u"
+    linkNode		    [2 0 7]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    7
+    ssIdNumber		    5
+    name		    "y"
+    linkNode		    [2 6 0]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  instance {
+    id			    8
+    name		    "Laser Scanner/Perform Measurement Step/Compute Distance/Pick smalles distance\n> 0"
+    machine		    1
+    chart		    2
+  }
+  target {
+    id			    9
+    name		    "sfun"
+    description		    "Default Simulink S-Function Target."
+    machine		    1
+    linkNode		    [1 0 0]
+  }
+}

@@ -1,0 +1,40 @@
+\documentclass[titlepage]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{ngerman}
+
+\author{Stefanie Gareis}
+\title{Die Welt walls.wrl}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\pagenumbering{Roman}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\section{VRML}
+Die Virtual Reality Modelling Language (VRML) ist eine relativ alte Sprache, die zum Erstellen virtueller Welten dient. Zu Zeiten von Netscape erfreute sie sich großer Beliebtheit, da man sie leicht in HTML einbinden konnte und es auch entsprechende PlugIns für die damaligen Browser gab. Heute ist davon nicht mehr viel übrig, die VRML wird egtl. nur noch von Simulink verwendet und dient hier zur Visualisierung modellbasierter Systeme.
+\subsection{Knoten (engl. Nodes)}
+Jede VRML-Welt besteht aus mehreren Knoten. Diese bilden dann eine Welt, in walls.wrl ist ein solcher Knoten zB der Falter. Ein Knoten wiederum hat mehrere Felder, die die Eigenschaften des Knotens festlegen, der Falter hat so zB die Fleder 'translation' und 'rotation'.
+\subsection{Prototypen}
+Zusätzlich zu den Knoten gibt es auch Prototypen, diese sind ähnlich zu den abstrakten Klassen in Java, sie selbst repräsentieren kein Objekt, jedoch ist es möglich mit ihnen vordefinierte Objekte zu erstellen. walls.wrl enthält 4 Sorten von Prototypen:\\
+\underline{wall, ground, box und sphere.}\\
+Ein neuer Protoyp erhält einen eigenen individuellen Namen und ist ab seiner Erzeugung auch als Knoten mit den definierten Eigenschaften verfügbar.
+\subsubsection{wall, ground}
+Wall und ground ermöglichen es Wände zu erzeugen, die entweder auf dem Boden liegen oder senkrecht stehen, schräge Wände zu erstellen ist noch nicht möglich. Wände und Böden haben die Felder \glqq position\grqq \ und \glqq size\grqq, diese legen fest wo sich der Mittelpunkt einer Wand befindet und wie sie gedreht ist.
+\subsubsection{box, sphere} 
+Box und Sphere dienen dazu Hindernisse in die Welt einzubauen, die der Falter selbstständig erkennen soll. Eine Box hat das Feld {\em position}, welches die Position der Box festlegt und {\em Size}, welches die Größe in den drei Dimensionen festlegt. \\
+Eine Sphere besitzt ebenfalls eine {\em position} und außerdem einen {\em radius}, der den Radius festlegt, damit die Kugel in allen drei Richtungen dieselbe Ausdehnung hat, also nicht zu einer Ellipse deformiert werden kann.
+\subsection{Viewpoints}
+Für diese Welt stehen drei Blickpunkte (engl.: Viewpoints) zur Verfügung:\\
+\underline{here, falter und watch.}\\
+Jeder dieser Blickpunkte ist spezifiziert durch eine Blickrichtung und eine Position und kann wie ein Knoten behandelt werden. Ein besonderer Blickpunkt ist {\em falter}, er verfolgt den Falter und hat ihn immer im Blick, als würde man hinter ihm her laufen.
+\section{walls.wrl in Simulink}
+Das Modell {\em freedom.mdl} verwendet die VRML-Welt walls.wrl und greift mit Hilfe der Knotenfelder in sie ein. Zur Laufzeit werden neue Wände erstellt, der Falter bewegt und die Falterkamera hinter ihm hergeschickt. Um mit Simulink eine sinnvolle VRML-Darstellung zu erzielen, muss man beachten, dass die Achsen in VRML anders liegen als sonst, so zeigt statt der z-Achse die Y-Achse nach oben.\\
+Auch sind manche Dreh- und Richtungswinkel anders dargestellt, aber von Simulink werden Blöcke (z.b. \glqq Direction to VRML Orientation \grqq) bereitgestellt.\\
+Eingebunden wird eine Welt durch einen {\em VR Sink}, dem man eine Welt zuweisen kann und die Knoten und Felder auf die zugegriffen werden soll. Daher können nur Knoten verändert werden, die schon vor der Laufzeit bekannt sind; während der Laufzeit erstellte Objekte, wie z.B. Wände können nicht verändert werden.
+\end{document}

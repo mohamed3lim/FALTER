@@ -1,0 +1,102 @@
+#VRML V2.0 utf8
+
+
+
+NavigationInfo {
+	headlight TRUE
+	visibilityLimit 100.0
+	type ["EXAMINE", "ANY"]
+	avatarSize [0.25, 1.75, 0.75]
+} 
+ 
+Background {
+	groundColor 0.0565629 0.2208154 0.4
+	skyColor 0.0565629 0.2208154 0.4
+}
+Inline{
+	url "falter.wrl"
+}
+DEF Plane Transform {
+	translation 2.000000 0.000000 0.000000
+	rotation 1.000000 0.000000 0.000000 0.000000
+	scale 1.000000 1.000000 1.000000
+	children [
+		DEF ME_Plane Group {
+			children [
+				Shape {
+					appearance Appearance {
+						material DEF MA_Material_001 Material {
+							diffuseColor 1.0 1.0 1.0
+							ambientIntensity 0.1666667
+							specularColor 0.4012008 0.4012008 0.4012008
+							emissiveColor  0.0 0.0 0.0
+							shininess 0.0976563
+							transparency 0.0
+						}
+       
+					}
+					geometry IndexedFaceSet {
+						solid FALSE
+						coord DEF coord_Plane Coordinate {
+							point [
+  2.0 0.0 -2.0
+  2.0 0.0 2.0
+  -2.0 0.0 2.0
+  -2.0 0.0 -2.0
+ 							]
+						}
+						
+						coordIndex [
+0 3 2 1, -1, 
+						]
+					}
+				}
+			]
+		}
+	]
+}
+
+DEF Plane1 Transform {
+	translation 0.000000 0.000000 0.000000
+	rotation 1.000000 0.000000 0.000000 0.000000
+	scale 1.000000 1.000000 1.000000
+	children [
+		DEF ME_Plane Group {
+			children [
+				Shape {
+					appearance Appearance {
+						material DEF MA_Material_001 Material {
+							diffuseColor 1.0 1.0 1.0
+							ambientIntensity 0.1666667
+							specularColor 0.4012008 0.4012008 0.4012008
+							emissiveColor  0.0 0.0 0.0
+							shininess 0.0976563
+							transparency 0.0
+						}
+        			
+					}
+					geometry IndexedFaceSet {
+						solid FALSE
+						coord DEF coord_Plane Coordinate {
+							point [
+  2.0 -2.0 0.0
+  2.0 2.0 0.0
+  -2.0 2.0 0.0
+  -2.0 -2.0 0.0
+ 							]
+						}
+						
+						coordIndex [
+0 3 2 1,  -1, 
+						]
+					}
+				}
+			]
+		}
+	]
+}
+
+
+
+
+

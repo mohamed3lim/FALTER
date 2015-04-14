@@ -1,0 +1,498 @@
+/*
+ * 	$Id$
+ * 	@levd.rating RED Hash: 04BAEFE1FDF2F3A6E13946F48720CB34
+ *
+ *  Created on: 26.08.2010
+ *      @author bayha
+ *      @author alim
+ */
+
+#ifdef SIMULATION
+// Defining MAGIC_VELOCITIES enables the simulation input of real velocities
+//#define MAGIC_VELOCITIES
+#include <mex.h>
+#include <unistd.h>
+#include <math.h>
+// #include <iostream>
+#include <unistd.h>
+// #include <cstdlib>
+
+#include <stdio.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <netinet/in.h>
+#include <queue>
+#include <deque>
+#include <list>
+#include "exchange.pb.h"
+
+#include "variables_control.h"
+#define PI 3.141592 
+//#define POWER_LIMITATIONS
+#endif
+#include <errno.h>
+
+
+#include <iostream>
+using namespace std;
+unsigned long int counter = 0;
+unsigned long int start;
+unsigned long int elapsed;
+int step = 0;
+int stepVertical = 0;
+int flag = 1;
+int rotationFlag = 0;
+int directions[] = {1,1,1,1,1,1,1,1,4,1,1,1,1,2,1,1,1,1,3,1,1,1,1,1,1,1,1};
+int sizeOfDirections = sizeof(directions)/sizeof(directions[0]);
+
+double elevations[] = {0.6,1,0.5,0.3};
+
+float pmdArray[PMD_RES_HEIGHT][PMD_RES_WIDTH];
+float USReadings[8];
+// int pmdHeight;
+// int pmdWidth;
+
+int sizeOfElevations = sizeof(elevations)/sizeof(elevations[0]);
+
+int curr = 0;
+int prev = 0;
+
+Data data;
+SrfData *srf;
+
+// Server variables
+int sockSr;
+struct sockaddr_in server_socket_sr;
+struct sockaddr_in client_socket_sr;
+int oneSr=1;
+int received;
+socklen_t client_len_sr = sizeof(client_socket_sr);
+queue<int> directionsQueue;
+//----------------
+
+// Client Variables
+int sockCl;
+struct sockaddr_in server_socket_Cl;
+int oneCl = 1;
+
+//---------------------------
+
+void client_main();
+void server_main();
+void nickControl();
+
+extern "C" int ctrl_init()
+{
+#ifdef SIMULATION
+    *output_desired_yaw = PI/2;
+    *output_gas = 140;
+    *output_yaw = 0;
+    *output_nick = 0;
+    *output_roll = 0;
+    *output_elevation = 0.12; // variable
+    *output_x = -23; //Variable
+    *output_y = -4; //variable
+    
+    // Server Sockets initialization
+
+
+	if ((sockSr = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP)) < 0){
+        cout <<"Error number is" << errno << endl;fflush(stdout);sleep(1);
+        exit(0);
+    }
+
+	setsockopt(sockSr, SOL_SOCKET, SO_REUSEPORT, &oneSr, sizeof(oneSr));
+
+	memset(&server_socket_sr, 0, sizeof(server_socket_sr));
+	server_socket_sr.sin_family = AF_INET;
+	server_socket_sr.sin_addr.s_addr = htonl(INADDR_ANY);
+	server_socket_sr.sin_port = htons(5554);
+
+	if (bind(sockSr, (struct sockaddr *) &server_socket_sr, sizeof(server_socket_sr)) < 0)
+		exit(0);
+    //------------------------------------------------------
+    // Client Socket Initialization
+    if ((sockCl = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP)) < 0)
+        exit(0);
+    
+    setsockopt(sockCl, SOL_SOCKET, SO_BROADCAST, &oneCl, sizeof(oneCl));
+    memset(&server_socket_Cl, 0, sizeof(server_socket_Cl));
+    server_socket_Cl.sin_family = AF_INET;
+    server_socket_Cl.sin_addr.s_addr = inet_addr("192.168.20.255");
+    //     server_socket.sin_addr.s_addr = inet_addr("10.149.187.255");
+    server_socket_Cl.sin_port = htons(5555);
+    //----------------------------
+
+
+    
+//     pmdHeight = PMD_RES_HEIGHT;
+//     pmdWidth = PMD_RES_WIDTH;
+//     *output_x = *input_x_position;
+//     *output_y = *input_y_position;
+	//mexPrintf("Init\n");
+#endif
+}
+
+
+void moveForward(){
+    
+    int x = (int) (*output_desired_yaw * (180/PI));
+
+    if(flag == 1){
+        start = counter;
+        switch (x) {
+            case 0:
+              *output_x = *output_x + 0.5;
+              break;
+            case 180:
+              *output_x = *output_x - 0.5;
+              break;
+            case (90):
+              *output_y = *output_y + 0.5;
+              break;
+            case (270):
+              *output_y = *output_y - 0.5;
+              break;
+            default:
+              // write here code for angles 45 later on
+              break;
+        }
+
+        flag = 2;
+    }
+    
+    if(flag = 2){
+        elapsed = counter - start;
+        nickControl();
+
+        if(elapsed > 5){
+            flag = 1;
+            step ++;
+        }
+    }
+
+}
+
+void nickControl(){
+    
+    int x = (int) (*output_desired_yaw * (180/PI));
+    
+    switch (x) {
+            case 0:
+              *output_nick = *input_x_pid;
+              *output_roll = (*input_y_pid);
+              break;
+            case 180:
+              *output_nick = -1*(*input_x_pid);
+              *output_roll = -1*(*input_y_pid);
+              break;
+            case (90):
+              *output_nick = *input_y_pid;
+              *output_roll = -1*(*input_x_pid);
+              break;
+            case (270):
+              *output_nick = -1*(*input_y_pid);
+              *output_roll = (*input_x_pid);
+              break;
+            default:
+              // write here code for angles 45 later on
+              break;
+    }
+}
+
+void moveRight(){
+    
+    if(flag == 1){
+        start = counter;
+        flag = 2;
+    }
+    
+    if(flag == 2){
+        elapsed = counter - start;
+        if(elapsed < 200){
+            nickControl();
+        }
+        else {
+            flag = 3;
+        }   
+    }
+    
+    if(flag == 3){
+        start = counter;
+            flag = 4;
+            if(*output_desired_yaw == 1.5*PI){
+                *output_desired_yaw = 0;
+            }
+            else{ 
+                *output_desired_yaw = *output_desired_yaw + (PI/2);
+            }
+    }
+
+    if(flag == 4){
+        elapsed = counter - start;
+        
+        if(elapsed > 500){
+            flag = 1;
+            step ++;
+//             moveForward();
+        }
+    }  
+}
+
+void moveLeft(){
+    
+    if(flag == 1){
+        start = counter;
+        flag = 2;
+    }
+    
+    if(flag == 2){
+        elapsed = counter - start;
+        if(elapsed < 200){
+            nickControl();
+        }
+        else {
+            flag = 3;
+        }   
+    }
+    
+    if(flag == 3){
+        start = counter;
+            flag = 4;
+            if(*output_desired_yaw == 0){
+                *output_desired_yaw = 1.5*PI;
+            }
+            else{ 
+                *output_desired_yaw = *output_desired_yaw - (PI/2);
+            }
+    }
+
+    if(flag == 4){
+        elapsed = counter - start;
+        
+        if(elapsed > 500){
+            flag = 1;
+            step ++;
+//             moveForward();
+        }
+    }  
+}
+
+
+void moveBackward(){
+    if(flag == 1){
+        start = counter;
+        flag = 2;
+    }
+    
+    if(flag == 2){
+        elapsed = counter - start;
+        if(elapsed < 200){
+            nickControl();
+        }
+        else {
+            flag = 3;
+        }   
+    }
+        
+    if(flag == 3){
+        start = counter;
+        flag = 4;
+
+        if(*output_desired_yaw == 0){
+            *output_desired_yaw = PI;
+        }
+        else{
+            if(*output_desired_yaw == (PI/2)){
+                *output_desired_yaw = 1.5*PI;
+            }
+            else{ 
+                *output_desired_yaw = *output_desired_yaw - PI;
+            }
+        }
+    }
+
+    if(flag == 4){
+        elapsed = counter - start;
+
+        if(elapsed > 600){
+            flag = 1;
+            step ++;
+//             moveForward();
+        }
+    }  
+}
+
+void moveVertical(double desiredHeight){
+        
+
+    *output_elevation = 0.12 + desiredHeight;
+    
+    if((*output_gas - *input_z_pid) > 50.0){
+        *output_gas = *output_gas - 50.0;
+    }
+    else{
+        if((*output_gas - *input_z_pid) < -50.0){
+            *output_gas = *output_gas + 50.0;
+        }
+        else{
+            *output_gas = *input_z_pid;
+        }
+    }
+}
+
+void rotate(){
+    *output_yaw = *input_yaw_pid;
+}
+
+void move(int direction){
+    
+    switch (direction) {
+        case 1: moveForward(); break;
+        case 2: moveBackward(); break;
+        case 3: moveRight(); break;
+        case 4: moveLeft(); break;
+        default: break;
+    }
+}
+
+
+void updatePmdArray(){
+    
+    int i;
+    int j;
+    int k = 0;
+    
+    for(i = 0;i < PMD_RES_HEIGHT;i++){
+        for(j = 0; j < PMD_RES_WIDTH; j++){
+            pmdArray[i][j] = input_pmd[k];
+//             mexPrintf("%f ",pmdArray[i][j]);
+            k++;
+        }
+//         mexPrintf("\n");
+    }
+    
+}
+
+extern "C" void ctrl_step()
+{   
+//     counter ++;
+//     if(counter > 300){
+//         if(step < sizeOfDirections){
+//             move(directions[step]);
+//         }
+//         else{
+//             nickControl();
+//         }
+//     }
+//     
+//     if(stepVertical < sizeOfElevations){
+//         moveVertical(elevations[stepVertical]);
+//     }
+//     else{
+//         moveVertical(elevations[sizeOfElevations-1]);
+//     }
+//     
+//     stepVertical = counter / 300;
+//     
+//     rotate();
+    client_main();
+    server_main();
+//     updatePmdArray();
+//     mexPrintf("output_x %f \n", *output_x);
+}
+
+
+void client_main()
+{
+// 	cout << "c\n";
+    
+    Data data;
+    SrfData *srf;
+    Image *image;
+    
+    
+    
+    srf = data.add_srfdata();
+    srf->set_srf_gnd(*srf_gnd);
+    srf->set_srf_rhs(*srf_rhs);
+    srf->set_srf_lhs(*srf_lhs);
+    srf->set_srf_front_rhs(*srf_front_rhs);
+    srf->set_srf_front_ctr(*srf_front_ctr);
+    srf->set_srf_front_lhs(*srf_front_lhs);
+    srf->set_srf_rear(*srf_rear);
+    srf->set_srf_ceiling(*srf_ceiling);
+    
+    image = data.add_image();
+    
+    for(int i = 0; i < (PMD_RES_HEIGHT*PMD_RES_WIDTH); i++){
+            image->add_input_pmd(input_pmd[i]);
+    }
+    
+    std::vector<uint32_t> encodedData;
+    encodedData.resize(data.ByteSize());
+	data.SerializeToArray(encodedData.data() ,encodedData.size());
+    
+//     for(int i = 0; i < encodedData.size();i ++)
+// 			cout << encodedData.at(i) << "  ";
+// 		cout << "\n**"<<encodedData.size()<<"\n";
+    cout << sizeof(server_socket_Cl) << endl;
+    if (sendto(sockCl, encodedData.data(), encodedData.size(), 0, (struct sockaddr *) &server_socket_Cl, sizeof(server_socket_Cl)) < 0)
+        {
+            cout << "sending error number: "<< errno << endl;
+        }
+//     cout <<"data size  "<< data.srfdata_size() << endl;
+//     shutdown (sock, 1);
+//     close(sock);
+//     google::protobuf::ShutdownProtobufLibrary();
+}
+
+void server_main(){
+    
+    int buffer[1];
+    
+//     socklen_t client_len = sizeof(client_socket);
+    
+//     prev = curr;
+    if ((received = recvfrom(sockSr, (char*)buffer, sizeof(int), MSG_DONTWAIT, (struct sockaddr *) &client_socket_sr, &client_len_sr)) < 0 ) 
+    if ( errno == EAGAIN)
+    {
+//             printf("Here 2  %d \n", i++);
+        return ;
+    }
+    else
+    if ( errno == EWOULDBLOCK)
+    {
+//             printf("Here  3 %d \n", i++);
+        return ;
+    }
+    else
+    if ( received  < 0)
+    {
+//         printf("Here  4 %d \n", i++);
+//         exit(0);
+    }
+//     curr = buffer[0];
+//     if((curr - prev) > 1){
+//         cout <<"Ro7na fi dahya"<< endl;
+//     }
+
+//     cout << "Client connected: "<< inet_ntoa(client_socket_sr.sin_addr)<<"\t"<<ntohs(client_socket_sr.sin_port)<<endl;
+    directionsQueue.push(buffer[0]);
+    int d = directionsQueue.front();
+	directionsQueue.pop();
+//     cout <<"buffer: " << d <<endl<<endl;
+
+//     close(received);
+//     shutdown (sock, 1);
+//     close(sock);
+}
+
+
+
+// void oneStep(String direction){
+//     
+// }

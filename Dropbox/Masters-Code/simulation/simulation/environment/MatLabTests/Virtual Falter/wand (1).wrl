@@ -1,0 +1,46 @@
+#VRML V2.0 utf8
+
+EXTERNPROTO mauer[
+	field SFVec3f position 0 0 0
+	field SFVec3f size 1 1 1
+	#erster Wert: 	um Z-Achse
+	#zweiter Wert:	um X-Achse
+	#dritter Wert:	um Y-Achse
+	#Winkel-Angabe in RAD
+	field SFRotation rotation 0 0 0 0
+    
+]
+
+{
+ Transform 
+	{
+	translation IS position
+	rotation IS rotation
+	scale IS size
+		children Shape 
+		{
+			appearance Appearance 
+			{
+				material Material 
+				{
+					diffuseColor 1.0 1.0 1.0
+					ambientIntensity 0.1666667
+					specularColor 0.4012008 0.4012008 0.4012008
+					emissiveColor  0.0 0.0 0.0
+					shininess 0.0976563
+					transparency 0.0
+				}
+            }
+			geometry IndexedFaceSet 
+			{
+                solid FALSE
+               	coord Coordinate
+                      {
+                           point [ 1 0 1, -1 0 1, -1 0 -1, 1 0 -1]
+                       }
+                       coordIndex [ 0 1 2 3 ]
+			}
+		}
+	}
+}
+"wand.wrl#mauer"

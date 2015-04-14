@@ -1,0 +1,204 @@
+18:30:58 **** Incremental Build of configuration Debug for project ImageProcessor ****
+make all 
+Building target: ImageProcessor
+Invoking: GCC C++ Linker
+g++ -L/usr/lib/x86_64-linux-gnu -o "ImageProcessor"  ./src/ImageProcessor.o ./src/exchange.pb.o ./src/main.o   -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_ml -lopencv_video -lopencv_features2d -lopencv_calib3d -lopencv_objdetect -lopencv_legacy -lopencv_flann
+./src/exchange.pb.o: In function `protobuf_AssignDesc_exchange_2eproto()':
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:35: undefined reference to `google::protobuf::DescriptorPool::generated_pool()'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:35: undefined reference to `google::protobuf::DescriptorPool::FindFileByName(std::string const&) const'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:36: undefined reference to `google::protobuf::internal::LogMessage::LogMessage(google::protobuf::LogLevel, char const*, int)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:36: undefined reference to `google::protobuf::internal::LogMessage::operator<<(char const*)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:36: undefined reference to `google::protobuf::internal::LogFinisher::operator=(google::protobuf::internal::LogMessage&)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:36: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:51: undefined reference to `google::protobuf::DescriptorPool::generated_pool()'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:51: undefined reference to `google::protobuf::MessageFactory::generated_factory()'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:51: undefined reference to `google::protobuf::internal::GeneratedMessageReflection::GeneratedMessageReflection(google::protobuf::Descriptor const*, google::protobuf::Message const*, int const*, int, int, int, google::protobuf::DescriptorPool const*, google::protobuf::MessageFactory*, int)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:73: undefined reference to `google::protobuf::DescriptorPool::generated_pool()'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:73: undefined reference to `google::protobuf::MessageFactory::generated_factory()'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:73: undefined reference to `google::protobuf::internal::GeneratedMessageReflection::GeneratedMessageReflection(google::protobuf::Descriptor const*, google::protobuf::Message const*, int const*, int, int, int, google::protobuf::DescriptorPool const*, google::protobuf::MessageFactory*, int)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:36: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+./src/exchange.pb.o: In function `protobuf_RegisterTypes':
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:87: undefined reference to `google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(google::protobuf::Descriptor const*, google::protobuf::Message const*)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:89: undefined reference to `google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(google::protobuf::Descriptor const*, google::protobuf::Message const*)'
+./src/exchange.pb.o: In function `protobuf_AddDesc_exchange_2eproto()':
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:105: undefined reference to `google::protobuf::internal::VerifyVersion(int, int, char const*)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:113: undefined reference to `google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:115: undefined reference to `google::protobuf::MessageFactory::InternalRegisterGeneratedFile(char const*, void (*)(std::string const&))'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:120: undefined reference to `google::protobuf::internal::OnShutdown(void (*)())'
+./src/exchange.pb.o: In function `image::image()':
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:137: undefined reference to `google::protobuf::UnknownFieldSet::UnknownFieldSet()'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:137: undefined reference to `google::protobuf::Message::~Message()'
+./src/exchange.pb.o: In function `image::image(image const&)':
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:145: undefined reference to `google::protobuf::UnknownFieldSet::UnknownFieldSet()'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:145: undefined reference to `google::protobuf::UnknownFieldSet::~UnknownFieldSet()'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:145: undefined reference to `google::protobuf::Message::~Message()'
+./src/exchange.pb.o: In function `image::~image()':
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:155: undefined reference to `google::protobuf::UnknownFieldSet::~UnknownFieldSet()'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:155: undefined reference to `google::protobuf::Message::~Message()'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:155: undefined reference to `google::protobuf::Message::~Message()'
+./src/exchange.pb.o: In function `image::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*)':
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:225: undefined reference to `google::protobuf::internal::WireFormat::SkipField(google::protobuf::io::CodedInputStream*, unsigned int, google::protobuf::UnknownFieldSet*)'
+./src/exchange.pb.o: In function `google::protobuf::io::CodedInputStream::ReadTag()':
+/home/alim/pb/pd.c.library/google/protobuf/io/coded_stream.h:884: undefined reference to `google::protobuf::io::CodedInputStream::ReadTagFallback()'
+./src/exchange.pb.o: In function `image::SerializeWithCachedSizes(google::protobuf::io::CodedOutputStream*) const':
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:240: undefined reference to `google::protobuf::internal::WireFormatLite::WriteFloat(int, float, google::protobuf::io::CodedOutputStream*)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:245: undefined reference to `google::protobuf::internal::WireFormat::SerializeUnknownFields(google::protobuf::UnknownFieldSet const&, google::protobuf::io::CodedOutputStream*)'
+./src/exchange.pb.o: In function `google::protobuf::io::CodedOutputStream::WriteTagToArray(unsigned int, unsigned char*)':
+/home/alim/pb/pd.c.library/google/protobuf/io/coded_stream.h:1083: undefined reference to `google::protobuf::io::CodedOutputStream::WriteVarint32FallbackToArray(unsigned int, unsigned char*)'
+./src/exchange.pb.o: In function `image::SerializeWithCachedSizesToArray(unsigned char*) const':
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:259: undefined reference to `google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(google::protobuf::UnknownFieldSet const&, unsigned char*)'
+./src/exchange.pb.o: In function `image::ByteSize() const':
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:277: undefined reference to `google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(google::protobuf::UnknownFieldSet const&)'
+./src/exchange.pb.o: In function `image::MergeFrom(google::protobuf::Message const&)':
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:286: undefined reference to `google::protobuf::internal::LogMessage::LogMessage(google::protobuf::LogLevel, char const*, int)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:286: undefined reference to `google::protobuf::internal::LogMessage::operator<<(char const*)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:286: undefined reference to `google::protobuf::internal::LogFinisher::operator=(google::protobuf::internal::LogMessage&)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:286: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:291: undefined reference to `google::protobuf::internal::ReflectionOps::Merge(google::protobuf::Message const&, google::protobuf::Message*)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:286: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+./src/exchange.pb.o: In function `image::MergeFrom(image const&)':
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:298: undefined reference to `google::protobuf::internal::LogMessage::LogMessage(google::protobuf::LogLevel, char const*, int)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:298: undefined reference to `google::protobuf::internal::LogMessage::operator<<(char const*)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:298: undefined reference to `google::protobuf::internal::LogFinisher::operator=(google::protobuf::internal::LogMessage&)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:298: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:300: undefined reference to `google::protobuf::UnknownFieldSet::MergeFrom(google::protobuf::UnknownFieldSet const&)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:298: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+./src/exchange.pb.o: In function `usData::usData()':
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:352: undefined reference to `google::protobuf::UnknownFieldSet::UnknownFieldSet()'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:352: undefined reference to `google::protobuf::Message::~Message()'
+./src/exchange.pb.o: In function `usData::usData(usData const&)':
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:360: undefined reference to `google::protobuf::UnknownFieldSet::UnknownFieldSet()'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:360: undefined reference to `google::protobuf::UnknownFieldSet::~UnknownFieldSet()'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:360: undefined reference to `google::protobuf::Message::~Message()'
+./src/exchange.pb.o: In function `usData::~usData()':
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:378: undefined reference to `google::protobuf::UnknownFieldSet::~UnknownFieldSet()'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:378: undefined reference to `google::protobuf::Message::~Message()'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:378: undefined reference to `google::protobuf::Message::~Message()'
+./src/exchange.pb.o: In function `usData::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*)':
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:562: undefined reference to `google::protobuf::internal::WireFormat::SkipField(google::protobuf::io::CodedInputStream*, unsigned int, google::protobuf::UnknownFieldSet*)'
+./src/exchange.pb.o: In function `google::protobuf::io::CodedInputStream::ReadTag()':
+/home/alim/pb/pd.c.library/google/protobuf/io/coded_stream.h:884: undefined reference to `google::protobuf::io::CodedInputStream::ReadTagFallback()'
+./src/exchange.pb.o: In function `usData::SerializeWithCachedSizes(google::protobuf::io::CodedOutputStream*) const':
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:576: undefined reference to `google::protobuf::internal::WireFormatLite::WriteDouble(int, double, google::protobuf::io::CodedOutputStream*)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:581: undefined reference to `google::protobuf::internal::WireFormatLite::WriteDouble(int, double, google::protobuf::io::CodedOutputStream*)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:586: undefined reference to `google::protobuf::internal::WireFormatLite::WriteDouble(int, double, google::protobuf::io::CodedOutputStream*)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:591: undefined reference to `google::protobuf::internal::WireFormatLite::WriteDouble(int, double, google::protobuf::io::CodedOutputStream*)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:596: undefined reference to `google::protobuf::internal::WireFormatLite::WriteDouble(int, double, google::protobuf::io::CodedOutputStream*)'
+./src/exchange.pb.o:/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:601: more undefined references to `google::protobuf::internal::WireFormatLite::WriteDouble(int, double, google::protobuf::io::CodedOutputStream*)' follow
+./src/exchange.pb.o: In function `usData::SerializeWithCachedSizes(google::protobuf::io::CodedOutputStream*) const':
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:616: undefined reference to `google::protobuf::internal::WireFormat::SerializeUnknownFields(google::protobuf::UnknownFieldSet const&, google::protobuf::io::CodedOutputStream*)'
+./src/exchange.pb.o: In function `google::protobuf::io::CodedOutputStream::WriteTagToArray(unsigned int, unsigned char*)':
+/home/alim/pb/pd.c.library/google/protobuf/io/coded_stream.h:1083: undefined reference to `google::protobuf::io::CodedOutputStream::WriteVarint32FallbackToArray(unsigned int, unsigned char*)'
+/home/alim/pb/pd.c.library/google/protobuf/io/coded_stream.h:1083: undefined reference to `google::protobuf::io::CodedOutputStream::WriteVarint32FallbackToArray(unsigned int, unsigned char*)'
+/home/alim/pb/pd.c.library/google/protobuf/io/coded_stream.h:1083: undefined reference to `google::protobuf::io::CodedOutputStream::WriteVarint32FallbackToArray(unsigned int, unsigned char*)'
+/home/alim/pb/pd.c.library/google/protobuf/io/coded_stream.h:1083: undefined reference to `google::protobuf::io::CodedOutputStream::WriteVarint32FallbackToArray(unsigned int, unsigned char*)'
+/home/alim/pb/pd.c.library/google/protobuf/io/coded_stream.h:1083: undefined reference to `google::protobuf::io::CodedOutputStream::WriteVarint32FallbackToArray(unsigned int, unsigned char*)'
+./src/exchange.pb.o:/home/alim/pb/pd.c.library/google/protobuf/io/coded_stream.h:1083: more undefined references to `google::protobuf::io::CodedOutputStream::WriteVarint32FallbackToArray(unsigned int, unsigned char*)' follow
+./src/exchange.pb.o: In function `usData::SerializeWithCachedSizesToArray(unsigned char*) const':
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:664: undefined reference to `google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(google::protobuf::UnknownFieldSet const&, unsigned char*)'
+./src/exchange.pb.o: In function `usData::ByteSize() const':
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:717: undefined reference to `google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(google::protobuf::UnknownFieldSet const&)'
+./src/exchange.pb.o: In function `usData::MergeFrom(google::protobuf::Message const&)':
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:726: undefined reference to `google::protobuf::internal::LogMessage::LogMessage(google::protobuf::LogLevel, char const*, int)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:726: undefined reference to `google::protobuf::internal::LogMessage::operator<<(char const*)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:726: undefined reference to `google::protobuf::internal::LogFinisher::operator=(google::protobuf::internal::LogMessage&)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:726: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:731: undefined reference to `google::protobuf::internal::ReflectionOps::Merge(google::protobuf::Message const&, google::protobuf::Message*)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:726: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+./src/exchange.pb.o: In function `usData::MergeFrom(usData const&)':
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:738: undefined reference to `google::protobuf::internal::LogMessage::LogMessage(google::protobuf::LogLevel, char const*, int)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:738: undefined reference to `google::protobuf::internal::LogMessage::operator<<(char const*)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:738: undefined reference to `google::protobuf::internal::LogFinisher::operator=(google::protobuf::internal::LogMessage&)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:738: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:765: undefined reference to `google::protobuf::UnknownFieldSet::MergeFrom(google::protobuf::UnknownFieldSet const&)'
+/home/alim/Desktop/Workspace/ImageProcessor/Debug/../src/exchange.pb.cpp:738: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+./src/exchange.pb.o: In function `google::protobuf::Closure::Closure()':
+/home/alim/pb/pd.c.library/google/protobuf/stubs/common.h:855: undefined reference to `vtable for google::protobuf::Closure'
+./src/exchange.pb.o: In function `google::protobuf::internal::FunctionClosure0::FunctionClosure0(void (*)(), bool)':
+/home/alim/pb/pd.c.library/google/protobuf/stubs/common.h:871: undefined reference to `vtable for google::protobuf::internal::FunctionClosure0'
+./src/exchange.pb.o: In function `google::protobuf::GoogleOnceInit(long*, void (*)())':
+/home/alim/pb/pd.c.library/google/protobuf/stubs/once.h:127: undefined reference to `google::protobuf::GoogleOnceInitImpl(long*, google::protobuf::Closure*)'
+/home/alim/pb/pd.c.library/google/protobuf/stubs/once.h:127: undefined reference to `google::protobuf::internal::FunctionClosure0::~FunctionClosure0()'
+/home/alim/pb/pd.c.library/google/protobuf/stubs/once.h:127: undefined reference to `google::protobuf::internal::FunctionClosure0::~FunctionClosure0()'
+./src/exchange.pb.o: In function `google::protobuf::MessageLite::MessageLite()':
+/home/alim/pb/pd.c.library/google/protobuf/message_lite.h:79: undefined reference to `vtable for google::protobuf::MessageLite'
+./src/exchange.pb.o: In function `google::protobuf::Message::Message()':
+/home/alim/pb/pd.c.library/google/protobuf/message.h:167: undefined reference to `vtable for google::protobuf::Message'
+./src/exchange.pb.o: In function `google::protobuf::UnknownFieldSet::Clear()':
+/home/alim/pb/pd.c.library/google/protobuf/unknown_field_set.h:226: undefined reference to `google::protobuf::UnknownFieldSet::ClearFallback()'
+./src/exchange.pb.o: In function `google::protobuf::io::CodedInputStream::ReadVarint32(unsigned int*)':
+/home/alim/pb/pd.c.library/google/protobuf/io/coded_stream.h:799: undefined reference to `google::protobuf::io::CodedInputStream::ReadVarint32Fallback(unsigned int*)'
+./src/exchange.pb.o: In function `google::protobuf::io::CodedInputStream::ReadLittleEndian32(unsigned int*)':
+/home/alim/pb/pd.c.library/google/protobuf/io/coded_stream.h:857: undefined reference to `google::protobuf::io::CodedInputStream::ReadLittleEndian32Fallback(unsigned int*)'
+./src/exchange.pb.o: In function `google::protobuf::io::CodedInputStream::ReadLittleEndian64(unsigned long*)':
+/home/alim/pb/pd.c.library/google/protobuf/io/coded_stream.h:871: undefined reference to `google::protobuf::io::CodedInputStream::ReadLittleEndian64Fallback(unsigned long*)'
+./src/exchange.pb.o: In function `google::protobuf::io::CodedOutputStream::VarintSize32(unsigned int)':
+/home/alim/pb/pd.c.library/google/protobuf/io/coded_stream.h:1091: undefined reference to `google::protobuf::io::CodedOutputStream::VarintSize32Fallback(unsigned int)'
+./src/exchange.pb.o: In function `google::protobuf::RepeatedField<float>::Get(int) const':
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:664: undefined reference to `google::protobuf::internal::LogMessage::LogMessage(google::protobuf::LogLevel, char const*, int)'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:664: undefined reference to `google::protobuf::internal::LogMessage::operator<<(char const*)'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:664: undefined reference to `google::protobuf::internal::LogFinisher::operator=(google::protobuf::internal::LogMessage&)'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:664: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:665: undefined reference to `google::protobuf::internal::LogMessage::LogMessage(google::protobuf::LogLevel, char const*, int)'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:665: undefined reference to `google::protobuf::internal::LogMessage::operator<<(char const*)'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:665: undefined reference to `google::protobuf::internal::LogFinisher::operator=(google::protobuf::internal::LogMessage&)'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:665: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:664: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:665: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+./src/exchange.pb.o: In function `bool google::protobuf::internal::WireFormatLite::ReadRepeatedFixedSizePrimitive<float, (google::protobuf::internal::WireFormatLite::FieldType)2>(int, unsigned int, google::protobuf::io::CodedInputStream*, google::protobuf::RepeatedField<float>*)':
+/home/alim/pb/pd.c.library/google/protobuf/wire_format_lite_inl.h:252: undefined reference to `google::protobuf::internal::LogMessage::LogMessage(google::protobuf::LogLevel, char const*, int)'
+/home/alim/pb/pd.c.library/google/protobuf/wire_format_lite_inl.h:252: undefined reference to `google::protobuf::internal::LogMessage::operator<<(char const*)'
+/home/alim/pb/pd.c.library/google/protobuf/wire_format_lite_inl.h:252: undefined reference to `google::protobuf::internal::LogFinisher::operator=(google::protobuf::internal::LogMessage&)'
+/home/alim/pb/pd.c.library/google/protobuf/wire_format_lite_inl.h:252: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+/home/alim/pb/pd.c.library/google/protobuf/wire_format_lite_inl.h:287: undefined reference to `google::protobuf::io::CodedInputStream::Skip(int)'
+/home/alim/pb/pd.c.library/google/protobuf/wire_format_lite_inl.h:252: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+./src/exchange.pb.o: In function `bool google::protobuf::internal::WireFormatLite::ReadPackedFixedSizePrimitive<float, (google::protobuf::internal::WireFormatLite::FieldType)2>(google::protobuf::io::CodedInputStream*, google::protobuf::RepeatedField<float>*)':
+/home/alim/pb/pd.c.library/google/protobuf/wire_format_lite_inl.h:363: undefined reference to `google::protobuf::io::CodedInputStream::BytesUntilTotalBytesLimit() const'
+/home/alim/pb/pd.c.library/google/protobuf/wire_format_lite_inl.h:365: undefined reference to `google::protobuf::io::CodedInputStream::BytesUntilLimit() const'
+/home/alim/pb/pd.c.library/google/protobuf/wire_format_lite_inl.h:368: undefined reference to `google::protobuf::io::CodedInputStream::BytesUntilLimit() const'
+/home/alim/pb/pd.c.library/google/protobuf/wire_format_lite_inl.h:376: undefined reference to `google::protobuf::io::CodedInputStream::ReadRaw(void*, int)'
+./src/exchange.pb.o: In function `image const* google::protobuf::internal::dynamic_cast_if_available<image const*, google::protobuf::Message const*>(google::protobuf::Message const*)':
+/home/alim/pb/pd.c.library/google/protobuf/generated_message_reflection.h:496: undefined reference to `typeinfo for google::protobuf::Message'
+./src/exchange.pb.o: In function `google::protobuf::RepeatedField<float>::MergeFrom(google::protobuf::RepeatedField<float> const&)':
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:729: undefined reference to `google::protobuf::internal::LogMessage::LogMessage(google::protobuf::LogLevel, char const*, int)'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:729: undefined reference to `google::protobuf::internal::LogMessage::operator<<(char const*)'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:729: undefined reference to `google::protobuf::internal::LogFinisher::operator=(google::protobuf::internal::LogMessage&)'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:729: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:729: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+./src/exchange.pb.o: In function `usData const* google::protobuf::internal::dynamic_cast_if_available<usData const*, google::protobuf::Message const*>(google::protobuf::Message const*)':
+/home/alim/pb/pd.c.library/google/protobuf/generated_message_reflection.h:496: undefined reference to `typeinfo for google::protobuf::Message'
+./src/exchange.pb.o: In function `google::protobuf::RepeatedField<float>::AddAlreadyReserved(float const&)':
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:642: undefined reference to `google::protobuf::internal::LogMessage::LogMessage(google::protobuf::LogLevel, char const*, int)'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:642: undefined reference to `google::protobuf::internal::LogMessage::operator<<(char const*)'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:642: undefined reference to `google::protobuf::internal::LogFinisher::operator=(google::protobuf::internal::LogMessage&)'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:642: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:642: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+./src/exchange.pb.o: In function `google::protobuf::RepeatedField<float>::Resize(int, float const&)':
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:654: undefined reference to `google::protobuf::internal::LogMessage::LogMessage(google::protobuf::LogLevel, char const*, int)'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:654: undefined reference to `google::protobuf::internal::LogMessage::operator<<(char const*)'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:654: undefined reference to `google::protobuf::internal::LogFinisher::operator=(google::protobuf::internal::LogMessage&)'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:654: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:654: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+./src/exchange.pb.o: In function `google::protobuf::RepeatedField<float>::Truncate(int)':
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:821: undefined reference to `google::protobuf::internal::LogMessage::LogMessage(google::protobuf::LogLevel, char const*, int)'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:821: undefined reference to `google::protobuf::internal::LogMessage::operator<<(char const*)'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:821: undefined reference to `google::protobuf::internal::LogFinisher::operator=(google::protobuf::internal::LogMessage&)'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:821: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+/home/alim/pb/pd.c.library/google/protobuf/repeated_field.h:821: undefined reference to `google::protobuf::internal::LogMessage::~LogMessage()'
+./src/exchange.pb.o:(.rodata._ZTV6usData[_ZTV6usData]+0x20): undefined reference to `google::protobuf::Message::GetTypeName() const'
+./src/exchange.pb.o:(.rodata._ZTV6usData[_ZTV6usData]+0x40): undefined reference to `google::protobuf::Message::InitializationErrorString() const'
+./src/exchange.pb.o:(.rodata._ZTV6usData[_ZTV6usData]+0x48): undefined reference to `google::protobuf::Message::CheckTypeAndMergeFrom(google::protobuf::MessageLite const&)'
+./src/exchange.pb.o:(.rodata._ZTV6usData[_ZTV6usData]+0x88): undefined reference to `google::protobuf::Message::DiscardUnknownFields()'
+./src/exchange.pb.o:(.rodata._ZTV6usData[_ZTV6usData]+0x90): undefined reference to `google::protobuf::Message::SpaceUsed() const'
+./src/exchange.pb.o:(.rodata._ZTV5image[_ZTV5image]+0x20): undefined reference to `google::protobuf::Message::GetTypeName() const'
+./src/exchange.pb.o:(.rodata._ZTV5image[_ZTV5image]+0x40): undefined reference to `google::protobuf::Message::InitializationErrorString() const'
+./src/exchange.pb.o:(.rodata._ZTV5image[_ZTV5image]+0x48): undefined reference to `google::protobuf::Message::CheckTypeAndMergeFrom(google::protobuf::MessageLite const&)'
+./src/exchange.pb.o:(.rodata._ZTV5image[_ZTV5image]+0x88): undefined reference to `google::protobuf::Message::DiscardUnknownFields()'
+./src/exchange.pb.o:(.rodata._ZTV5image[_ZTV5image]+0x90): undefined reference to `google::protobuf::Message::SpaceUsed() const'
+./src/exchange.pb.o:(.rodata._ZTI6usData[_ZTI6usData]+0x10): undefined reference to `typeinfo for google::protobuf::Message'
+./src/exchange.pb.o:(.rodata._ZTI5image[_ZTI5image]+0x10): undefined reference to `typeinfo for google::protobuf::Message'
+collect2: error: ld returned 1 exit status
+make: *** [ImageProcessor] Error 1
+
+18:30:58 Build Finished (took 220ms)
+
